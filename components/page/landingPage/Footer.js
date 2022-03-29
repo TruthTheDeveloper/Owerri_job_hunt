@@ -23,6 +23,8 @@ const Footer = () => {
             <div className="flex">
                 <h1>Follow Us</h1>
                 <span className="mx-4"><FontAwesomeIcon icon={faTwitterSquare} size="3x" /></span>
+                <span className="mx-4"><FontAwesomeIcon icon={faTwitterSquare} size="3x" /></span>
+                <span className="mx-4"><FontAwesomeIcon icon={faTwitterSquare} size="3x" /></span>
             </div>
             <hr className="border border-green-500" style={{color:"#14A800"}}/>
             <h1  className="text-center text-lg my-8">Copyright 2022 all right reserved</h1>
