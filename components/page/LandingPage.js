@@ -2,7 +2,9 @@ import Header from './landingPage/Header';
 import Main from './landingPage/Main';
 import Sponsor from './landingPage/Sponsors';
 import Testimonial from './landingPage/Testimonials';
-
+import ContactUs from './landingPage/ContactUs';
+import Footer from './landingPage/Footer';
+import AboutUs from './landingPage/AboutUs';
 
 const LandingPage = () => {
 
@@ -13,7 +15,10 @@ const LandingPage = () => {
             <Header/>
             <Main/>
             <Sponsor/>
-            <Testimonial/>
+            {/* <Testimonial/> */}
+            <ContactUs/>
+            <AboutUs/>
+            <Footer/>
          </>
      )
 }
