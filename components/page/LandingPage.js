@@ -15,7 +15,7 @@ const LandingPage = () => {
             <Header/>
             <Main/>
             <Sponsor/>
-            {/* <Testimonial/> */}
+            <Testimonial/>
             <ContactUs/>
             <AboutUs/>
             <Footer/>

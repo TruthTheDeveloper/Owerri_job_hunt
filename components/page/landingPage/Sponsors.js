@@ -19,7 +19,7 @@ import sponsor14 from '../../../images/sponsor14.png';
 
 const Sponsor = () => {
     return(
-        <section>
+        <section className="mb-48">
             <h1 className="text-center text-2xl font-semibold my-16">OUR SPONSORS</h1>
             <div className="flex justify-center my-8">
                 <Image
