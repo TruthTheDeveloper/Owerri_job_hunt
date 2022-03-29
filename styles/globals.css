@@ -15,6 +15,12 @@ a {
   box-sizing: border-box;
 }
 
+h1{
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Serif', serif;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
