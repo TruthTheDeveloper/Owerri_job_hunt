@@ -17,7 +17,7 @@ const Testimonials = () => {
 
       return (
         <>
-        <h1 className="text-center font-semibold text-2xl">Testimonials</h1>
+        <h1 className="text-center font-semibold text-3xl my-24">Testimonials</h1>
         <Carousel
         showArrows={true}
         infiniteLoop={true}
@@ -27,11 +27,13 @@ const Testimonials = () => {
         interval={6100}
       >
         <div>
-          <Image src={black2} height={160} width={170} />
-          <div className="myCarousel">
-            <h3>Shirley Fultz</h3>
-            <h4>Designer</h4>
-            <p>
+          <Image src={black2} height={500} width={120}   />
+          {/* <Image src={black2} height={120} width={120}   /> */}
+          {/* <img src={black2} className="w-20 h-16" alt="" /> */}
+          <div className=" myCarousel text-white" style={{backgroundColor:"#F2F7F2"}}>
+            <h3 className=" text-white">Shirley Fultz</h3>
+            <h4 className=" text-white">Designer</h4>
+            <p className=" text-white">
               Its freeing to be able to catch up on customized news and not be
               distracted by a social media element on the same site
             </p>
@@ -39,8 +41,9 @@ const Testimonials = () => {
         </div>
 
         <div>
-          <Image src={Woman} height={160} width={170} />
-          <div className="myCarousel">
+          <Image src={Woman} height={500} width={120} />
+          {/* <Image src={black2} height={120} width={120}   /> */}
+          <div className="myCarousel" style={{backgroundColor:"#F2F7F2"}}>
             <h3>Daniel Keystone</h3>
             <h4>Designer</h4>
             <p>
@@ -51,8 +54,9 @@ const Testimonials = () => {
         </div>
 
         <div>
-          <Image src={Woman2} height={100} width={100} />
-          <div className="myCarousel">
+          <Image src={Woman2} height={500} width={120} />
+          {/* <Image src={black2} height={120} width={120}   /> */}
+          <div className="myCarousel" style={{backgroundColor:"#F2F7F2"}}>
             <h3>Theo Sorel</h3>
             <h4>Designer</h4>
             <p>

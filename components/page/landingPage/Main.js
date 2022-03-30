@@ -36,8 +36,8 @@ const Main = () => {
     return(
         <section>
             <h3 className="text-center text-4xl font-semibold my-12">HOW TO GET <br/> STARTED</h3>
-            <div className="flex">
-                <div className="basis-1/2 text-xl px-24 my-24" data-aos="zoom-in">
+            <div className="flex flex-col md:flex-row">
+                <div className="basis-1/2 text-xl md:px-24 px-4 my-24" data-aos="zoom-in">
                     <h1 className="font-bold mb-4">Seeking for Jobs?</h1>
                     <h1>Register for upskill 1 month traning program with a sum of #5000 and get access to course material, training and mentorship, to equip, prepare and connect you to your dream job!</h1>
 
@@ -45,18 +45,18 @@ const Main = () => {
                 </div>
                 <Lottie options={defaultOptions}
                 height={500}
-                width={500}
+                width={400}
                 isStopped={isStopped}
                 isPaused={isPaused}/>
             </div>
-            <div className="flex">
+            <div className="flex flex-col-reverse md:flex-row">
 
             <Lottie options={defaultOption}
                 height={500}
-                width={500}
+                width={400}
                 isStopped={isStopped}
                 isPaused={isPaused}/>
-                <div className="basis-1/2 text-xl px-24 my-24" data-aos="zoom-in">
+                <div className="basis-1/2 text-xl md:px-24 px-4 px-24 my-24" data-aos="zoom-in">
                     <h1 className="font-bold mb-4">Seeking  for Talents?</h1>
                     <h1>Upskill network proposes to partner with your buisness to train and prepare candidate fit for your organization, Join other smart Buisnesses to discover and hire Digital Talents from Owerri best talent pool</h1>
 

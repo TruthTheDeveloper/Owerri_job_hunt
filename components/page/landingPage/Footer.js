@@ -13,11 +13,11 @@ const Footer = () => {
 
     return(
         <footer className="">
-            <div className="flex mt-28">
+            <div className="flex flex-col md:flex-row mt-28">
                 <div className="">
                     <Image src={jobhunt}/>
                 </div>
-                <div className="mt-16">
+                <div className="ml-24 md:ml-0 mt-16">
                     <div className="text-2xl" style={{color:"#14A800"}}>
                         <h1 className="my-2">Top Skills</h1>
                         <h1 className="my-2">Trending Skills</h1>
@@ -29,7 +29,7 @@ const Footer = () => {
                     <div className="">
                         <h1 className="text-xl font-semibold">Contact Us</h1>
                         <h1 className="my-2">+(234) 9023436227</h1>
-                        <h1 className="my-2">Trending Skills</h1>
+                        <h1 className="my-2">no1 ojwku street of cherbuim junction beside UBA Bank</h1>
                         <h1 className="my-2">Top Skills in Owerri</h1>
                     </div>
                 </div>
@@ -52,11 +52,11 @@ const Footer = () => {
             </div>
             <div className="my-4">
                 <div className="flex">
-                <h1 className="text-xl mx-8 font-semibold">Follow Us</h1>
-                <FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faTwitter} className="w-10 h-10 mx-1 "  />
-                <FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faFacebook} className="w-10 h-10 mx-1 "  />
-                <FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faLinkedin} className="w-10 h-10 mx-1 "  />
-                <FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faInstagram} className="w-10 h-10 mx-1 "  />
+                <h1 className="text-xl md:mx-8 mr-4 ml-2 font-semibold">Follow Us</h1>
+                    <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faTwitter} className="w-10 h-10 mx-1 "  /></a>
+                    <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faFacebook} className="w-10 h-10 mx-1 "  /></a>
+                    <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faLinkedin} className="w-10 h-10 mx-1 "  /></a>
+                    <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faInstagram} className="w-10 h-10 mx-1 "  /></a>
                 </div>
             </div>
             <hr className="border border-green-500" style={{color:"#14A800"}}/>
