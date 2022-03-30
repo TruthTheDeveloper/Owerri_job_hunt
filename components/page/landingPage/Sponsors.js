@@ -1,5 +1,7 @@
 import Image from "next/image";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {useEffect} from 'react'
 import sponsor1 from '../../../images/sponsor1.jpg';
 import sponsor2 from '../../../images/sponsor2.jpg';
 import sponsor3 from '../../../images/sponsor3.png';
@@ -17,11 +19,16 @@ import sponsor14 from '../../../images/sponsor14.png';
 
 
 
+
 const Sponsor = () => {
+
+    useEffect(() => {
+        AOS.init({ duration: 1500 });
+      }, []);
     return(
         <section className="mb-48">
             <h1 className="text-center text-2xl font-semibold my-16">OUR SPONSORS</h1>
-            <div className="flex justify-center my-8">
+            <div className="flex justify-center my-8" data-aos="zoom-in">
                 <Image
                     src={sponsor1}
                     width={100}
@@ -69,7 +76,7 @@ const Sponsor = () => {
                 />
                 
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center" data-aos="zoom-in">
                 <Image
                 src={sponsor10}
                 width={100}

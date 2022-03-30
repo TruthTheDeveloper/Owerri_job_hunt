@@ -27,7 +27,7 @@ const Testimonials = () => {
         interval={6100}
       >
         <div>
-          <Image src={black2} height={100} width={100} />
+          <Image src={black2} height={160} width={170} />
           <div className="myCarousel">
             <h3>Shirley Fultz</h3>
             <h4>Designer</h4>
@@ -39,7 +39,7 @@ const Testimonials = () => {
         </div>
 
         <div>
-          <Image src={Woman} height={100} width={100} />
+          <Image src={Woman} height={160} width={170} />
           <div className="myCarousel">
             <h3>Daniel Keystone</h3>
             <h4>Designer</h4>
