@@ -27,8 +27,8 @@ const Testimonials = () => {
         interval={6100}
       >
         <div>
-          <Image src={black2} height={500} width={120}   />
-          {/* <Image src={black2} height={120} width={120}   /> */}
+          {/* <Image src={black2} height={500} width={120}   /> */}
+          <Image src={black2} height={120} width={120}   />
           {/* <img src={black2} className="w-20 h-16" alt="" /> */}
           <div className=" myCarousel text-white" style={{backgroundColor:"#F2F7F2"}}>
             <h3 className=" text-white">Shirley Fultz</h3>
@@ -41,8 +41,8 @@ const Testimonials = () => {
         </div>
 
         <div>
-          <Image src={Woman} height={500} width={120} />
-          {/* <Image src={black2} height={120} width={120}   /> */}
+          {/* <Image src={Woman} height={500} width={120} /> */}
+          <Image src={Woman} height={120} width={120}   />
           <div className="myCarousel" style={{backgroundColor:"#F2F7F2"}}>
             <h3>Daniel Keystone</h3>
             <h4>Designer</h4>
@@ -54,8 +54,8 @@ const Testimonials = () => {
         </div>
 
         <div>
-          <Image src={Woman2} height={500} width={120} />
-          {/* <Image src={black2} height={120} width={120}   /> */}
+          {/* <Image src={Woman2} height={500} width={120} /> */}
+          <Image src={Woman2} height={120} width={120}   />
           <div className="myCarousel" style={{backgroundColor:"#F2F7F2"}}>
             <h3>Theo Sorel</h3>
             <h4>Designer</h4>
