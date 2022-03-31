@@ -1,5 +1,5 @@
-import Head from "next/head"
-import NavBar from "../page/landingPage/Navbar"
+import Head from "next/head";
+import NavBar from "../page/landingPage/Navbar";
 
 
 const Layout = (props) => {
