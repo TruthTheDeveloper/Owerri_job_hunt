@@ -1,4 +1,4 @@
-import Buisness from "../../components/Auth/Registration/Buisness";
+import Buisness from "../../components/Auth/Login/Buisness";
 const BuisnessPage = () => {
 
     return(

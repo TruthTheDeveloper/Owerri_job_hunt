@@ -1,4 +1,4 @@
-import Candidate from "../../components/Auth/Registration/Candidate";
+import Candidate from "../../components/Auth/Login/Candidate";
 
 const CandidatePage = () => {
     return (

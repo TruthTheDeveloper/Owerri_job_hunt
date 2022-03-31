@@ -3,6 +3,7 @@ import Image from 'next/image';
 import hambuger from '../../../images/menu.png';
 import close from '../../../images/close.png';
 import { useState } from 'react';
+import Link from 'next/link';
 const NavBar = () => {
 
     const [open , setOpen] = useState(false)
@@ -24,18 +25,32 @@ const NavBar = () => {
                 }
             </div>
 
-            <ul className="hidden ml-auto lg:flex lg:text-lg lg:mr-16 font-semibold ">
-                <li className="mx-3 hover:text-green-700"><a href="#">Home</a></li>
-                <li className="mx-3 hover:text-green-700"><a href="#">About Us</a></li>
-                <li className="mx-3 hover:text-green-700"><a href="#">Contact Us</a></li>
-                <li className="mx-3 hover:text-green-700"><a href="#">Services</a></li>
+            <ul className="hidden ml-auto lg:flex lg:text-lg lg:mr-16 font-semibold">
+                <Link href="/">
+                    <li className="mx-3 hover:text-green-700"><a href="">Home</a></li>
+                </Link>
+                <li className="mx-3 hover:text-green-700"><a href="#services">Services</a></li>
+                <li className="mx-3 hover:text-green-700"><a href="#about-us">About Us</a></li>
+                <li className="mx-3 hover:text-green-700"><a href="#testimonials">Testimonials</a></li>
+                <li className="mx-3 hover:text-green-700"><a href="#contact-us">Contact Us</a></li>
+                <Link href="#">
+                    <button className="flex text-white px-4 pt-1 rounded-md mr-8" style={{backgroundColor:'#3C8224'}}>
+                    Login
+                    </button>
+                </Link>
             </ul>
-            {open && <div className="h-28 text-black my-6 ">
-            <ul className=" flex flex-col text-lg lg:mr-16 font-bold text-md  ">
-                    <li className="my-1 ml-3 hover:text-green-700"><a href="#">Home</a></li>
-                    <li className="my-1 ml-3 hover:text-green-700"><a href="#">About Us</a></li>
-                    <li className="my-1 ml-3 hover:text-green-700"><a href="#">Contact Us</a></li>
-                    <li className="my-1 ml-3 hover:text-green-700"><a href="#">Services</a></li>
+            {open && <div className="h-44 text-black my-6  ">
+            <ul className=" flex flex-col text-lg lg:mr-16 font-bold text-md ">
+            <li className="mx-3 hover:text-green-700"><a href="#header">Home</a></li>
+                <li className="mx-3 hover:text-green-700"><a href="#services">Services</a></li>
+                <li className="mx-3 hover:text-green-700"><a href="#about-us">About Us</a></li>
+                <li className="mx-3 hover:text-green-700"><a href="#testimonials">Testimonials</a></li>
+                <li className="mx-3 hover:text-green-700"><a href="#contact-us">Contact Us</a></li>
+                    <Link href="#">
+                        <button className="flex  text-white px-4 pt-1 rounded-md w-24 ml-2 h-10 pt-2 " style={{backgroundColor:'#3C8224'}}>
+                            Login
+                        </button>
+                    </Link>
                 </ul> 
             </div>}
         </nav>

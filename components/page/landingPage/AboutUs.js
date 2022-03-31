@@ -8,7 +8,7 @@ const AboutUs = () => {
         AOS.init({ duration: 1500 });
       }, []);
     return(
-        <section className="my-24" >
+        <section id="about-us" className="my-24" >
             <h1 className="text-center text-4xl font-semibold my-8">About Us</h1>
             <div className="flex lg:w-7/12 lg:mx-auto shadow-lg rounded-lg" style={{backgroundColor:"#F2F7F2"}} data-aos="fade-right">
                 <div className="hidden md:block">

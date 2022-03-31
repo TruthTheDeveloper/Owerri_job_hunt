@@ -16,7 +16,7 @@ const Testimonials = () => {
       };
 
       return (
-        <>
+        <section id="testimonials">
         <h1 className="text-center font-semibold text-3xl my-24">Testimonials</h1>
         <Carousel
         showArrows={true}
@@ -66,7 +66,7 @@ const Testimonials = () => {
           </div>
         </div>
       </Carousel>
-        </>
+      </section>
         
       );
 }

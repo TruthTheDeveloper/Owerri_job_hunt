@@ -10,7 +10,7 @@ const ContactUs = () => {
     })
 
     return(
-        <section className="my-48">
+        <section id="contact-us" className="my-48">
             <form className=" lg:w-6/12 mx-auto flex flex-col justify-center shadow-xl">
                 <h1 className="text-center text-3xl font-medium mb-24">Contact Us</h1>
                 <div className="flex flex-col justify-center mx-16">
