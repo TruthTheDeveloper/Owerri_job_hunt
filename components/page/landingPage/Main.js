@@ -36,7 +36,7 @@ const Main = () => {
 
     return(
         <section id="services">
-            <h3 className="text-center text-4xl font-semibold my-12">HOW TO GET <br/> STARTED</h3>
+            <h1 className="text-center text-4xl font-semibold my-12">HOW TO GET <br/> STARTED</h1>
             <div className="flex flex-col md:flex-row">
                 <div className="basis-1/2 text-xl md:px-24 px-4 my-24" data-aos="zoom-in">
                     <h1 className="font-bold mb-4">Seeking for Jobs?</h1>

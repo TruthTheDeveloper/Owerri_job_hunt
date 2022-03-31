@@ -33,7 +33,7 @@ const NavBar = () => {
                 <li className="mx-3 hover:text-green-700"><a href="#about-us">About Us</a></li>
                 <li className="mx-3 hover:text-green-700"><a href="#testimonials">Testimonials</a></li>
                 <li className="mx-3 hover:text-green-700"><a href="#contact-us">Contact Us</a></li>
-                <Link href="#">
+                <Link href="/login">
                     <button className="flex text-white px-4 pt-1 rounded-md mr-8" style={{backgroundColor:'#3C8224'}}>
                     Login
                     </button>
