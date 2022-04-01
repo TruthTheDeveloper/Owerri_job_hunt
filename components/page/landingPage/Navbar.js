@@ -41,12 +41,14 @@ const NavBar = () => {
             </ul>
             {open && <div className="h-44 text-black my-6  ">
             <ul className=" flex flex-col text-lg lg:mr-16 font-bold text-md ">
-            <li className="mx-3 hover:text-green-700"><a href="#header">Home</a></li>
+            <Link href="/">
+                    <li className="mx-3 hover:text-green-700"><a href="">Home</a></li>
+                </Link>
                 <li className="mx-3 hover:text-green-700"><a href="#services">Services</a></li>
                 <li className="mx-3 hover:text-green-700"><a href="#about-us">About Us</a></li>
                 <li className="mx-3 hover:text-green-700"><a href="#testimonials">Testimonials</a></li>
                 <li className="mx-3 hover:text-green-700"><a href="#contact-us">Contact Us</a></li>
-                    <Link href="#">
+                    <Link href="/login">
                         <button className="flex  text-white px-4 pt-1 rounded-md w-24 ml-2 h-10 pt-2 " style={{backgroundColor:'#3C8224'}}>
                             Login
                         </button>

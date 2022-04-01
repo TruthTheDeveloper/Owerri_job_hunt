@@ -17,14 +17,14 @@ const Footer = () => {
                 <div className="">
                     <Image src={jobhunt}/>
                 </div>
-                <div className="ml-24 md:ml-0 mt-16">
+                <div className="ml-6 md:ml-24 md:ml-0 mt-16">
                     <div className="text-2xl" style={{color:"#14A800"}}>
                         <h1 className="my-2">Top Skills</h1>
                         <h1 className="my-2">Trending Skills</h1>
                         <h1 className="my-2">Top Skills in Owerri</h1>
                     </div>
                 </div>
-                <div className="ml-24 mt-16">
+                <div className="ml-6 md:ml-24 mt-16">
                     <p></p>
                     <div className="">
                         <h1 className="text-xl font-semibold">Contact Us</h1>
@@ -33,7 +33,7 @@ const Footer = () => {
                         <h1 className="my-2">Top Skills in Owerri</h1>
                     </div>
                 </div>
-                <div className="ml-24 mt-16">
+                <div className="ml-6 md:ml-24 mt-16">
                     <p></p>
                     <div className="">
                         <h1 className="text-xl font-semibold">Why Job Hunt</h1>
@@ -42,7 +42,7 @@ const Footer = () => {
                         <h1 className="my-2">Safe and Secure</h1>
                     </div>
                 </div>
-                <div className="ml-24 mt-16">
+                <div className="ml-6 md:ml-24 mt-16">
                     <p></p>
                     <div className="">
                         <h1 className="text-xl font-semibold">Main Sponsor</h1>

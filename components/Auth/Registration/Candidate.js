@@ -27,7 +27,7 @@ const Candidate = () => {
         candidate.phoneNumber.length < 1 && 
         candidate.password.length < 1 && 
         candidate.confirmPassword.length < 1 ? 
-        setCandidate({...candidate, usernameError:'Please input username', emailError:'Please input email', phoneNumberError:'Please input phoneNumber', passwordError:'Please input Password', confirmPasswordError:'Please input confirm password'}) : router.push('/candidate/login')
+        setCandidate({...candidate, usernameError:'Please input username', emailError:'Please input email', phoneNumberError:'Please input phoneNumber', passwordError:'Please input Password', confirmPasswordError:'Please input confirm password'}) : router.push('/email-verification/candidate')
 
         
     }

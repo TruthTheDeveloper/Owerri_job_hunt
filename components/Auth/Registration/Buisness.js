@@ -30,7 +30,7 @@ const Buisness = () => {
         buisness.buisnessPhoneNumber.length < 1 && 
         buisness.businessPassword.length < 1 && 
         buisness.confirmBuisnessPassword < 1 ? 
-        setBuisness({...buisness, buisnessNameError:'Please input Buisness Name', buisnessEmailError:'Please input Buisness Email', buisnessPhoneNumberError:'Please input Buisness PhoneNumber', buisnessTypeError:'Please input BuisnessType', buisnessPasswordError:'Please input Buisness Password', confirmBuisnessPasswordError:'Please input confirm buisness password'}) : router.push('/buisness/login')
+        setBuisness({...buisness, buisnessNameError:'Please input Buisness Name', buisnessEmailError:'Please input Buisness Email', buisnessPhoneNumberError:'Please input Buisness PhoneNumber', buisnessTypeError:'Please input BuisnessType', buisnessPasswordError:'Please input Buisness Password', confirmBuisnessPasswordError:'Please input confirm buisness password'}) : router.push('/email-verification/buisness')
         
     }
 

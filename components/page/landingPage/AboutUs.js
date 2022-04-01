@@ -17,7 +17,7 @@ const AboutUs = () => {
                 <div className=" mx-5 " style={{color:"#001E00"}}>
                     <h1 className="md:text-lg my-8">THIS PROJECT IS BROUGHT TO YOU BY UPSKILL NETWORK</h1>
                     <h1 className="md:text-xl text-lg mt-8">Upskill Network is a team of didgital skill experts facilitating digital transformation accross Nigeria through inclusive digital literacy training programs, buisness incubation and support, consulting and partnership with other government agency</h1>
-                    <button className="mt-24 rounded-md mx-auto flex w-48 h-12 text-xl pl-10 pt-2 text-white" style={{backgroundColor:"#14A800"}}>Learn More</button>
+                    <button className="md:mt-24 my-12 rounded-md mx-auto flex w-48 h-12 text-xl pl-10 pt-2 text-white" style={{backgroundColor:"#14A800"}}>Learn More</button>
                 </div>
                 
             </div>
