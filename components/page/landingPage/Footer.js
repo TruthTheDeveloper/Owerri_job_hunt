@@ -46,7 +46,7 @@ const Footer = () => {
                     <p></p>
                     <div className="">
                         <h1 className="text-xl font-semibold">Main Sponsor</h1>
-                        <Image src={upskill} width={150} height={150}/>
+                        <Image src={upskill} width={150} height={150} alt="jobhunt-logo"/>
                     </div>
                 </div>
             </div>

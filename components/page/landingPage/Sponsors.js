@@ -24,18 +24,21 @@ const Sponsor = () => {
                     src={upskill}
                     width={300}
                 height={200}
+                alt="upskill-logo"
                 />
                 <div className="lg:pt-24 pt-12 pl-10 ">
                     <Image
                         src={harriet} 
                         width={300}
                         height={200}
+                        alt="harriet-logo"
                     />
                 </div>
                 <Image
                     src={upskillTv}
                     width={400}
                 height={200}
+                alt="upskilltv-logog"
                 />
             </div>
         </section>

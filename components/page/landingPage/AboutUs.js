@@ -12,7 +12,7 @@ const AboutUs = () => {
             <h1 className="text-center text-4xl font-semibold my-8">About Us</h1>
             <div className="flex lg:w-7/12 lg:mx-auto shadow-lg rounded-lg" style={{backgroundColor:"#F2F7F2"}} data-aos="fade-right">
                 <div className="hidden md:block">
-                    <Image src={Woman} height={1800} width={1500} />
+                    <Image src={Woman} height={1800} width={1500} alt="aboutus"/>
                 </div>
                 <div className=" mx-5 " style={{color:"#001E00"}}>
                     <h1 className="md:text-xl mt-4">THIS PROJECT IS BROUGHT TO YOU BY UPSKILL NETWORK</h1>
