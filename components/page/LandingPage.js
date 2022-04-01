@@ -5,6 +5,7 @@ import Testimonial from './landingPage/Testimonials';
 import ContactUs from './landingPage/ContactUs';
 import Footer from './landingPage/Footer';
 import AboutUs from './landingPage/AboutUs';
+import SponsorsForm from './landingPage/SponsorsForm';
 
 const LandingPage = () => {
 
@@ -15,6 +16,7 @@ const LandingPage = () => {
             <Header/>
             <Main/>
             <Sponsor/>
+            <SponsorsForm/>
             <Testimonial/>
             <AboutUs/>
             <ContactUs/>
