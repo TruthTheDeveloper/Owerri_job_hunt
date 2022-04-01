@@ -1,7 +1,22 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Select from 'react-select';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
+
 const Buisness = () => {
+
+    const options = [
+        { value: 'Techonlogy and Media', label: 'Techonlogy and Media' },
+        { value: 'Food and Eatery', label: 'Food and Eatery' },
+        { value: 'Industrial Services', label: 'Industrial Services' },
+        { value: 'Health', label: 'Health' },
+    ]
+
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [phoneNumber, setPhoneNumber] = useState(undefined)
 
     const router = useRouter()
 
@@ -21,13 +36,15 @@ const Buisness = () => {
 
 
     })
+    console.log(selectedOption, phoneNumber)
 
     const submitHandler = (e) => {
         e.preventDefault()
 
         buisness.buisnessName.length < 1 && 
         buisness.buisnessEmail.length < 1 && 
-        buisness.buisnessPhoneNumber.length < 1 && 
+        phoneNumber === undefined && 
+        selectedOption === null &&
         buisness.businessPassword.length < 1 && 
         buisness.confirmBuisnessPassword < 1 ? 
         setBuisness({...buisness, buisnessNameError:'Please input Buisness Name', buisnessEmailError:'Please input Buisness Email', buisnessPhoneNumberError:'Please input Buisness PhoneNumber', buisnessTypeError:'Please input BuisnessType', buisnessPasswordError:'Please input Buisness Password', confirmBuisnessPasswordError:'Please input confirm buisness password'}) : router.push('/email-verification/buisness')
@@ -50,18 +67,23 @@ const Buisness = () => {
                 </div>
                 <div className="py-4 ">
                     <label>Buisness PhoneNumber</label>
-                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" onChange={(e) => setBuisness({...buisness, buisnessPhoneNumber:e.target.value})}/>
+                    <PhoneInput
+                    placeholder="Enter phone number"
+                    className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" 
+                    value={phoneNumber}
+                    onChange={setPhoneNumber}/>
                     <p className="text-red-600">{buisness.buisnessPhoneNumberError}</p>
                 </div>
                 <div className="py-4 ">
                     <label>Buisness Type</label>
-                    <select className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md">
-                        <option>Techonlogy and Media</option>
-                        <option>Food and Eatery</option>
-                        <option>Agriculture</option>
-                        <option>Industrial Services</option>
-                        <option>Health</option>
-                    </select>
+                    <Select
+                        defaultValue={selectedOption}
+                        onChange={setSelectedOption}
+                        options={options}
+                        className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
+                    />
+                    <p className="text-red-600">{buisness.buisnessTypeError}</p>
+
                 </div>
                 <div>
                     <label>Password</label>

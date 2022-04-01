@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const Candidate = () => {
 
     const router = useRouter()
 
+    const [phoneNumber, setPhoneNumber] = useState()
+
     const [candidate, setCandidate] = useState({
         username:'',
         email:'',
-        phoneNumber:'',
         password:'',
         confirmPassword:'',
         usernameError:'',
@@ -24,7 +27,7 @@ const Candidate = () => {
 
         candidate.username.length < 1 && 
         candidate.email.length < 1 && 
-        candidate.phoneNumber.length < 1 && 
+        phoneNumber === undefined && 
         candidate.password.length < 1 && 
         candidate.confirmPassword.length < 1 ? 
         setCandidate({...candidate, usernameError:'Please input username', emailError:'Please input email', phoneNumberError:'Please input phoneNumber', passwordError:'Please input Password', confirmPasswordError:'Please input confirm password'}) : router.push('/email-verification/candidate')
@@ -48,7 +51,11 @@ const Candidate = () => {
                 </div>
                 <div className="py-4 ">
                     <label>PhoneNumber</label><br/>
-                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" onChange={(e) => setCandidate({...candidate, phoneNumber:e.target.value})}/>
+                    <PhoneInput
+                    placeholder="Enter phone number"
+                    className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" 
+                    value={phoneNumber}
+                    onChange={setPhoneNumber}/>
                     <p className="text-red-600">{candidate.phoneNumberError}</p>
                 </div>
                 <div className="py-4 ">
