@@ -6,21 +6,24 @@ const Buisness = () => {
 
     const router = useRouter()
 
+    
+    const [emailValidation, setEmailValidation] = useState('');
+    const [passwordValidation, setPasswordValidation] = useState('');
+
     const [buisness, setBuisness] = useState({
         buisnessEmail:'',
         businessPassword:'',
-        buisnessEmailError:'',
-        buisenessPasswordError:"",
-
 
     })
 
     const submitHandler = (e) => {
         e.preventDefault()
+      
+        buisness.buisnessEmail.length < 1 ? setEmailValidation(' Plesae input Email') : setEmailValidation('')
+        buisness.businessPassword.length < 1 ? setPasswordValidation('Please input password') : setPasswordValidation('')
+    
 
-        buisness.buisnessEmail.length < 1 && 
-        buisness.businessPassword.length < 1 ? 
-        setBuisness({...buisness,  buisnessEmailError:'Please input Buisness Email',  buisenessPasswordError:'Please input Buisness Password'}) : router.push('/plan/buisnessPlan')
+        buisness.buisnessEmail.length > 1 &&  buisness.businessPassword.length > 1 && router.push('/plan/buisnessPlan')
         
     }
 
@@ -31,12 +34,12 @@ const Buisness = () => {
                 <div className="py-4 ">
                     <label>Buisness Email</label>
                     <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" onChange={(e) => setBuisness({...buisness, buisnessEmail:e.target.value})}/>
-                    <p className="text-red-600">{buisness.buisnessEmailError}</p>
+                    <p className="text-red-600">{emailValidation}</p>
                 </div>
                 <div>
                     <label>Password</label>
                     <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='password' onChange={(e) => setBuisness({...buisness, businessPassword:e.target.value})}/>
-                    <p className="text-red-600">{buisness.buisenessPasswordError}</p>
+                    <p className="text-red-600">{passwordValidation}</p>
                 </div>
                 <button onClick={submitHandler} className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg" style={{backgroundColor:"#14A800"}}>Log In</button>
                     <div className="flex flex-col">

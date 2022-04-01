@@ -35,8 +35,8 @@ const business = () => {
   }, [GetCompanyFromSlugState]);
 
   return GetCompanyFromSlugState.loading ? (
-    <Loader />
-  ) : GetCompanyFromSlug.isActive ? (
+    <Loader small={ false} width={"100%"} height={ "100%"} color="black" />
+  ) : GetCompanyFromSlugState.isActive ? (
     <div style="display:flex; justify-content:center;">
       <h3>Thanks for Completing your process, will shall contact you. : </h3>
     </div>

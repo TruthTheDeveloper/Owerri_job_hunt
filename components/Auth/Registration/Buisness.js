@@ -1,7 +1,31 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Select from 'react-select';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
+
 const Buisness = () => {
+
+    const options = [
+        { value: 'Techonlogy and Media', label: 'Techonlogy and Media' },
+        { value: 'Food and Eatery', label: 'Food and Eatery' },
+        { value: 'Industrial Services', label: 'Industrial Services' },
+        { value: 'Health', label: 'Health' },
+    ]
+
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [phoneNumber, setPhoneNumber] = useState(undefined)
+
+    const [nameValidation, setNameValidation] = useState('');
+    const [phoneNumberValidation, setPhoneNumberValidation] = useState('');
+    const [typeValidation, setTypeValidation] = useState('');
+    const [emailValidation, setEmailValidation] = useState('');
+    const [passwordValidation, setPasswordValidation] = useState('');
+    const [confirmPasswordValidation, setConfirmPasswordValidation] = useState('');
+
+
 
     const router = useRouter()
 
@@ -12,25 +36,26 @@ const Buisness = () => {
         buisnessType:'',
         businessPassword:'',
         confirmBuisnessPassword:'',
-        buisnessNameError:'',
-        buisnessEmailError:'',
-        buisnessPhoneNumberError:'',
-        buisnessTypeError:"",
-        buisnessPasswordError:"",
-        confirmBuisnessPasswordError:""
-
 
     })
+    console.log(selectedOption, phoneNumber)
 
     const submitHandler = (e) => {
         e.preventDefault()
 
-        buisness.buisnessName.length < 1 && 
-        buisness.buisnessEmail.length < 1 && 
-        buisness.buisnessPhoneNumber.length < 1 && 
-        buisness.businessPassword.length < 1 && 
-        buisness.confirmBuisnessPassword < 1 ? 
-        setBuisness({...buisness, buisnessNameError:'Please input Buisness Name', buisnessEmailError:'Please input Buisness Email', buisnessPhoneNumberError:'Please input Buisness PhoneNumber', buisnessTypeError:'Please input BuisnessType', buisnessPasswordError:'Please input Buisness Password', confirmBuisnessPasswordError:'Please input confirm buisness password'}) : router.push('/email-verification/buisness')
+        buisness.buisnessName.length < 1 ? setNameValidation(' Please input Name') : setNameValidation('')
+        buisness.buisnessEmail.length < 1 ? setEmailValidation(' Plesae input Email') : setEmailValidation('')
+        phoneNumber === undefined ? setPhoneNumberValidation('Please input PhoneNumber') : setPhoneNumberValidation('')
+        selectedOption === null ? setTypeValidation('Please select buisness Type') : setTypeValidation('')
+        buisness.businessPassword.length < 1 ? setPasswordValidation('Please input password') : setPasswordValidation('')
+        buisness.confirmBuisnessPassword.length < 1 ? setConfirmPasswordValidation("please confirm password") : setConfirmPasswordValidation('')
+        buisness.businessPassword !== buisness.confirmBuisnessPassword ? setConfirmPasswordValidation("password does not match") : setConfirmPasswordValidation('')
+
+        
+        buisness.buisnessName.length > 1  && buisness.buisnessEmail.length > 1  && phoneNumber !== undefined && selectedOption !== null &&  buisness.businessPassword.length > 1  &&   buisness.confirmBuisnessPassword.length > 1 && router.push('/email-verification/buisness')
+
+
+
         
     }
 
@@ -40,38 +65,44 @@ const Buisness = () => {
             <h1 className="text-center my-5 font-semibold" style={{color:"#14A800"}}>REGISTER AS A BUISNESS</h1>
                 <div className="py-4 w-full ">
                     <label>Buisness Name</label>
-                    <input  className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" onChange={(e) => setBuisness({...buisness, buisnessName:e.target.value})}/>
-                    <p className="text-red-600">{buisness.buisnessNameError}</p>
+                    <input  className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" onChange={(e) => setBuisness({...buisness, buisnessName:e.target.value})} minLength={2}
+                required/>
+                    <p className="text-red-600">{nameValidation}</p>
                 </div>
                 <div className="py-4 ">
                     <label>Buisness Email</label>
                     <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" onChange={(e) => setBuisness({...buisness, buisnessEmail:e.target.value})}/>
-                    <p className="text-red-600">{buisness.buisnessNameError}</p>
+                    <p className="text-red-600">{emailValidation}</p>
                 </div>
                 <div className="py-4 ">
                     <label>Buisness PhoneNumber</label>
-                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" onChange={(e) => setBuisness({...buisness, buisnessPhoneNumber:e.target.value})}/>
-                    <p className="text-red-600">{buisness.buisnessPhoneNumberError}</p>
+                    <PhoneInput
+                    placeholder="Enter phone number"
+                    className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" 
+                    value={phoneNumber}
+                    onChange={setPhoneNumber}/>
+                    <p className="text-red-600">{phoneNumberValidation}</p>
                 </div>
                 <div className="py-4 ">
                     <label>Buisness Type</label>
-                    <select className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md">
-                        <option>Techonlogy and Media</option>
-                        <option>Food and Eatery</option>
-                        <option>Agriculture</option>
-                        <option>Industrial Services</option>
-                        <option>Health</option>
-                    </select>
+                    <Select
+                        defaultValue={selectedOption}
+                        onChange={setSelectedOption}
+                        options={options}
+                        className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
+                    />
+                    <p className="text-red-600">{typeValidation}</p>
+
                 </div>
                 <div>
                     <label>Password</label>
                     <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='password' onChange={(e) => setBuisness({...buisness, businessPassword:e.target.value})}/>
-                    <p className="text-red-600">{buisness.buisnessPasswordError}</p>
+                   <p className="text-red-600">{passwordValidation}</p>
                 </div>
                 <div>
                     <label>Confirm Password</label>
                     <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='password' onChange={(e) => setBuisness({...buisness, confirmBuisnessPassword:e.target.value})}/>
-                    <p className="text-red-600">{buisness.confirmBuisnessPasswordError}</p>
+                    <p className="text-red-600">{confirmPasswordValidation}</p>
                 </div>
                     <button className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg" onClick={submitHandler} style={{backgroundColor:"#14A800"}}>Sign Up</button>
                     <div className="flex">
