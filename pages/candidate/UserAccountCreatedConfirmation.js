@@ -35,7 +35,7 @@ const UserAccountCreatedConfirmation = ({ isCompany }) => {
         background: "beige",
       }}
     >
-      <div class="notification success">
+      <div className="notification success">
         Success! Your Acccount was created successfully, please check your email
         to continue.If you could not find your email on the mails folder, check
         your spam folder too.

@@ -11,7 +11,7 @@ import BuisnessPlan from "../../components/Plan/BuisnessPlan";
 import Loader from "../../misc/Loader";
 import CompanyActive from "./companyActive";
 
-const business = () => {
+const Business = () => {
   const GetCompanyFromSlugState = useSelector(
     (state) => state.GetCompanyFromSlug
   );
@@ -46,6 +46,6 @@ const business = () => {
 
 
 
-export default business;
+export default Business;
 
 
