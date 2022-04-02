@@ -19,9 +19,9 @@ const LandingPage = () => {
             <Header/>
             <Main/>
             <AllTalents/>
-            <Talent/>
+            {/* <Talent/> */}
             <Sponsor/>
-            <Test/>
+            {/* <Test/> */}
             <SponsorsForm/>
             <Testimonial/>
             <AboutUs/>
