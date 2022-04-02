@@ -43,7 +43,7 @@ const Talent = () => {
         <SwiperSlide>
             <div className="bg-white shadow-lg border flex flex-col mx-12 px-8 pt-4 ">
               <Image src={Edgar} height={250} width={200} alt="info"/>
-              <h1 className="text-lg font-semibold mt-4">Alex Munonozi</h1>
+              <h1 className="text-lg font-semibold mt-4">Edgar Ampiire</h1>
               <p className="text-center text-xl my-4">Digital marketer</p>
               <button className="w-48 mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
             </div>
@@ -51,7 +51,7 @@ const Talent = () => {
         <SwiperSlide>
             <div className="bg-white shadow-lg border flex flex-col mx-12 px-8 pt-4">
               <Image src={ikeagwu} height={250} width={200} alt="info"/>
-              <h1 className="text-lg font-semibold mt-4">Alex Munonoi</h1>
+              <h1 className="text-lg font-semibold mt-4">Ikeagwu Ebuka</h1>
               <p className="text-center text-xl my-4">Digital marketer</p>
               <button className="w-48 mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
             </div>
@@ -59,7 +59,7 @@ const Talent = () => {
         <SwiperSlide>
           <div className="bg-white shadow-lg border flex flex-col mx-12 px-8 pt-4">
             <Image src={jane} height={250} width={200} alt="info"/>
-            <h1 className="text-lg font-semibold mt-4">Alex Munonozi</h1>
+            <h1 className="text-lg font-semibold mt-4">Angrl vitalis</h1>
               <p className="text-center text-xl my-4">Digital marketer</p>
               <button className="w-48 mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
@@ -67,7 +67,7 @@ const Talent = () => {
         <SwiperSlide>
           <div className="bg-white shadow-lg border flex flex-col mx-12 px-8 pt-4">
             <Image src={marvis} height={250} width={200} alt="info"/>
-            <h1 className="text-lg font-semibold mt-4">Alex Munonozi</h1>
+            <h1 className="text-lg font-semibold mt-4">Jane Bolagi</h1>
               <p className="text-center text-xl my-4">Digital marketer</p>
               <button className="w-48 mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
@@ -75,7 +75,7 @@ const Talent = () => {
         <SwiperSlide>
           <div className="bg-white shadow-lg border flex flex-col mx-12 px-8 pt-4">
             <Image src={vitalis} height={250} width={200} alt="info"/>
-            <h1 className="text-lg font-semibold mt-4">Alex Munonozi</h1>
+            <h1 className="text-lg font-semibold mt-4">Marvis Chukwu</h1>
               <p className="text-center text-xl my-4">Digital marketer</p>
               <button className="w-48 mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
