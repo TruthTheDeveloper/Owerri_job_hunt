@@ -6,7 +6,8 @@ import ContactUs from './landingPage/ContactUs';
 import Footer from './landingPage/Footer';
 import AboutUs from './landingPage/AboutUs';
 import SponsorsForm from './landingPage/SponsorsForm';
-import Talent from './landingPage/Talents'
+// import Talent from './landingPage/Talents';
+import AllTalents from './landingPage/AllTalents';
 
 const LandingPage = () => {
 
@@ -16,7 +17,8 @@ const LandingPage = () => {
          <>
             <Header/>
             <Main/>
-            <Talent/>
+            <AllTalents/>
+            {/* <Talent/> */}
             <Sponsor/>
             <SponsorsForm/>
             <Testimonial/>
