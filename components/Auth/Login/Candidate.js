@@ -5,19 +5,24 @@ import { useRouter } from "next/router";
 const Candidate = () => {
 
     const router = useRouter()
+
+    const [emailValidation, setEmailValidation] = useState('');
+    const [passwordValidation, setPasswordValidation] = useState('');
+
     const [candidate, setCandidate] = useState({
         email:'',
         password:'',
-        emailError:'',
-        passwordError:'',
     })
 
     const submitHandler = (e) => {
         e.preventDefault()
 
-        candidate.email.length < 1 && 
-        candidate.password.length < 1 ?
-        setCandidate({...candidate, emailError:'Please input email',  passwordError:'Please input Password'}) : router.push('/plan')
+        candidate.email.length < 1 ? setEmailValidation(' Please input Email') : setEmailValidation('')
+        candidate.password.length < 1 ? setPasswordValidation('Please input password') : setPasswordValidation('')
+
+
+
+        candidate.email.length > 1 &&  candidate.password.length > 1 && router.push('/plan')
 
         
     }
@@ -28,13 +33,13 @@ const Candidate = () => {
                 <h1 className="text-center my-5 font-semibold" style={{color:"#14A800"}}>LOGIN AS A CANDIDATE</h1>
                 <div className="py-4 w-full ">
                     <label>Eamil</label><br/>
-                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='email' onChange={(e) => setCandidate({...candidate, username:e.target.value})}/>
-                    <p className="text-red-600">{candidate.emailError}</p>
+                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='email' onChange={(e) => setCandidate({...candidate, email:e.target.value})}/>
+                    <p className="text-red-600">{emailValidation}</p>
                 </div>
                 <div className="py-4 ">
                     <label>Password</label><br/>
                     <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='password' onChange={(e) => setCandidate({...candidate, password:e.target.value})}/>
-                    <p className="text-red-600">{candidate.passwordError}</p>
+                    <p className="text-red-600">{passwordValidation}</p>
                 </div>
                 <button onClick={submitHandler} className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg" style={{backgroundColor:"#14A800"}}>Log In</button>
                 <div className="flex flex-col">
