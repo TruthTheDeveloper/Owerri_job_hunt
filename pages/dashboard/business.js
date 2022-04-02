@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import GetCompanyFromSlug from "../../store/dispatchers/Auth/Company/GetUserFromSlug";
 import BuisnessPlan from "../../components/Plan/BuisnessPlan";
 import Loader from "../../misc/Loader";
+import CompanyActive from "./companyActive";
 
 const business = () => {
   const GetCompanyFromSlugState = useSelector(
@@ -37,9 +38,7 @@ const business = () => {
   return GetCompanyFromSlugState.loading ? (
     <Loader small={ false} width={"100%"} height={ "100%"} color="black" />
   ) : GetCompanyFromSlugState.isActive ? (
-    <div style="display:flex; justify-content:center;">
-      <h3>Thanks for Completing your process, will shall contact you. : </h3>
-    </div>
+    <CompanyActive />
   ) : (
     <BuisnessPlan />
   );

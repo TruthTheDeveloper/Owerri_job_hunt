@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { RESET_APP_TOAST } from "../../store/Actions/Utils/Toast";
 
 
-
 const Wrapper = ({ children }) => {
   const dispatch = useDispatch();
   const { message:AppToastMessage, error:AppToastError } = useSelector((state) => state.AppToast);
