@@ -6,7 +6,7 @@ import ContactUs from './landingPage/ContactUs';
 import Footer from './landingPage/Footer';
 import AboutUs from './landingPage/AboutUs';
 import SponsorsForm from './landingPage/SponsorsForm';
-// import Talent from './landingPage/Talents';
+import Talent from './landingPage/Talents';
 import AllTalents from './landingPage/AllTalents';
 import Test from './landingPage/Test';
 
@@ -19,7 +19,7 @@ const LandingPage = () => {
             <Header/>
             <Main/>
             <AllTalents/>
-            {/* <Talent/> */}
+            <Talent/>
             <Sponsor/>
             <Test/>
             <SponsorsForm/>

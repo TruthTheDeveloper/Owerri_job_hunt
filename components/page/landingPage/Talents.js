@@ -7,7 +7,7 @@ import marvis from '../../../images/talents/marvis.jpg';
 import vitalis from '../../../images/talents/vitalis.jpg'
 import Image from 'next/image';
 import { Pagination } from "swiper";
-// import 'swiper/css';
+import 'swiper/css';
 
 // Alexis Munonozi
 // Edgar Ampiire
@@ -22,7 +22,7 @@ const Talent = () => {
 
         <h1 className="font-semibold text-center py-16 text-2xl">A GLIMPSE OF FEW OWERRI TALENTS</h1>
 
-            {/* <Swiper
+            <Swiper
         slidesPerView={3}
         spaceBetween={30}
         pagination={{
@@ -80,7 +80,7 @@ const Talent = () => {
               <button className="xl:w-48 xl:mx-auto mr-4 h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
         </SwiperSlide>
-      </Swiper> */}
+      </Swiper>
 
         </section>
     )
