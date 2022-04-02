@@ -1,13 +1,13 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import Alex from '../../../images/talents/Alex.jpg';
-import Edgar from '../../../images/talents/Edgar.jpg';
-import ikeagwu from '../../../images/talents/ikeagwu.jpg';
-import jane from '../../../images/talents/jane.jpg';
-import marvis from '../../../images/talents/marvis.jpg';
-import vitalis from '../../../images/talents/vitalis.jpg'
-import Image from 'next/image';
-import { Pagination } from "swiper";
-import 'swiper/css';
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import Alex from '../../../images/talents/Alex.jpg';
+// import Edgar from '../../../images/talents/Edgar.jpg';
+// import ikeagwu from '../../../images/talents/ikeagwu.jpg';
+// import jane from '../../../images/talents/jane.jpg';
+// import marvis from '../../../images/talents/marvis.jpg';
+// import vitalis from '../../../images/talents/vitalis.jpg'
+// import Image from 'next/image';
+// import { Pagination } from "swiper";
+// import 'swiper/css';
 
 const AllTalents = () => {
 
@@ -16,7 +16,7 @@ const AllTalents = () => {
 
         <h1 className="font-semibold text-center py-16 text-2xl">A GLIMPSE OF FEW OWERRI TALENTS</h1>
 
-            <Swiper
+            {/* <Swiper
         slidesPerView={3}
         spaceBetween={30}
         pagination={{
@@ -74,7 +74,7 @@ const AllTalents = () => {
               <button className="xl:w-48 xl:mx-auto mr-4 h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
         </SwiperSlide>
-      </Swiper> 
+      </Swiper>  */}
 
         </section>
     )
