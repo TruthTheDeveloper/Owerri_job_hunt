@@ -16,10 +16,10 @@ const NavBar = () => {
 
                 {
                     open ? <div className="ml-auto mr-4 cursor-pointer lg:hidden" onClick={() =>setOpen(prev => !prev)} >
-                    <Image src={close} width={30} height={30}/>
+                    <Image src={close} alt="info" width={30} height={30}/>
                 </div>:
                 <div className="ml-auto mr-4 cursor-pointer lg:hidden"  onClick={() =>setOpen(prev => !prev)}>
-                    <Image src={hambuger} width={40} height={40}/>
+                    <Image src={hambuger} alt="info" width={40} height={40}/>
                 </div>
 
                 }
