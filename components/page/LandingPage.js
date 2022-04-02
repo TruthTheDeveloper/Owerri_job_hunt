@@ -8,6 +8,7 @@ import AboutUs from './landingPage/AboutUs';
 import SponsorsForm from './landingPage/SponsorsForm';
 // import Talent from './landingPage/Talents';
 import AllTalents from './landingPage/AllTalents';
+import Test from './landingPage/Test';
 
 const LandingPage = () => {
 
@@ -20,6 +21,7 @@ const LandingPage = () => {
             <AllTalents/>
             {/* <Talent/> */}
             <Sponsor/>
+            <Test/>
             <SponsorsForm/>
             <Testimonial/>
             <AboutUs/>
