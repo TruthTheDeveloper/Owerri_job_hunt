@@ -42,7 +42,7 @@ const Main = () => {
                     <h1 className="font-bold mb-4">Seeking for Jobs?</h1>
                     <h1>Register for upskill 1 month traning program with a sum of #5000 and get access to course material, training and mentorship, to equip, prepare and connect you to your dream job!</h1>
 
-                    <Link href="/candidate">
+                    <Link href="/candidate/register">
                       <button className=" px-6 py-4 text-white mt-12 rounded-md" style={{backgroundColor:"#14A800"}}>Enroll Now</button>
                     </Link>
                 </div>
@@ -63,7 +63,7 @@ const Main = () => {
                     <h1 className="font-bold mb-4">Seeking  for Talents?</h1>
                     <h1>Upskill network proposes to partner with your buisness to train and prepare candidate fit for your organization, Join other smart Buisnesses to discover and hire Digital Talents from Owerri best talent pool</h1>
 
-                    <Link href="/buisness">
+                    <Link href="/buisness/register">
                       <button className=" px-6 py-4 text-white mt-12 rounded-md" style={{backgroundColor:"#14A800"}}>Hire Talent</button>
                     </Link>
                 </div>

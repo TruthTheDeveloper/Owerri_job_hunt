@@ -10,10 +10,10 @@ const Header = () => {
                     <h1 className="text-white text-4xl sm:text-5xl xl:text-6xl text-center font-medium">Over 2000 Jobs Open <br/> For Grabs</h1>
                     <h1 className="text-slate-100 sm:text-lg xl:text-xl text-center font-medium mt-10">FIND AND HIRE TALENTS FOR YOUR BUISNESS</h1>
                     <div className="flex mx-auto justify-center my-10 lg:my-14 md:w-full">
-                        <Link href="/candidate">
+                        <Link href="/candidate/register">
                             <button className="lg:py-3  sm:text-lg   text-white rounded-md lg:text-xl xl:font-semibold py-2 px-5 md:px-8  mr-8  xl:mr-16 " style={{backgroundColor:"#14A800"}}>Find Jobs</button>
                         </Link>
-                        <Link href="/buisness">
+                        <Link href="/buisness/register">
                             <button className="bg-white  sm:text-lg xl:py-4   rounded-md xl:text-xl xl:font-semibold px-4    lg:px-6 w">Hire Talents</button>
                         </Link>
                     </div>
