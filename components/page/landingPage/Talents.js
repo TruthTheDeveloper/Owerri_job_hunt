@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Alex from '../../../images/talents/Alex.jpg';
 import Edgar from '../../../images/talents/Edgar.jpg';
 import ikeagwu from '../../../images/talents/ikeagwu.jpg';
-import jane from '../../../images/talents/jane.jpg';
+import jane from '../../../images/talents/queen.jpg';
 import marvis from '../../../images/talents/marvis.jpg';
 import vitalis from '../../../images/talents/vitalis.jpg'
 import Image from 'next/image';
