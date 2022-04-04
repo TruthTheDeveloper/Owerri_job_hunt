@@ -8,7 +8,7 @@ let URL = `${BACKEND_DOMAIN}api/user/candidate/register`;
 
 let ERROR = false;
 
-const LoginUserDispatcher = (data) => async (dispatch) => {
+const RegisterUserDispatcher = (data) => async (dispatch) => {
   dispatch(AppLoadingDispatcher(true));
 
   let params = requestParamsParser("POST", null, data);
@@ -54,5 +54,5 @@ const LoginUserDispatcher = (data) => async (dispatch) => {
   
 };
 
-export default LoginUserDispatcher;
+export default RegisterUserDispatcher;
 

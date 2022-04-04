@@ -1,12 +1,19 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
+
+import { useDispatch, useSelector } from "react-redux";
+import RegisterUserDispatcher from '../../../store/dispatchers/Auth/User/Register';
 
 const Candidate = () => {
 
     const router = useRouter()
+
+    const dispatch = useDispatch();
+    const RegisterUserState = useSelector((state) => state.RegisterUserReducer);
+    const [registeratonSuccess, setRegisteratonStatus] = useState(false);
 
     const [phoneNumber, setPhoneNumber] = useState()
 
@@ -24,6 +31,12 @@ const Candidate = () => {
         confirmPassword:'',
     })
 
+    useEffect(() => {
+        if (RegisterUserState.message.length > 0) {
+          !RegisterUserState.error && setRegisteratonStatus(true);
+        }
+      }, [RegisterUserState.error, RegisterUserState.message]);
+
     const submitHandler = (e) => {
         e.preventDefault()
 
@@ -35,7 +48,17 @@ const Candidate = () => {
         candidate.password !== candidate.confirmPassword ? setConfirmPasswordValidation("password does not match") : setConfirmPasswordValidation('')
 
 
-        candidate.username.length > 1 && candidate.email.length > 1  &&  phoneNumber !== undefined &&  candidate.password.length > 1  && candidate.confirmPassword.length > 1 && router.push('/email-verification/candidate')
+        candidate.username.length > 1 && candidate.email.length > 1  &&  phoneNumber !== undefined &&  candidate.password.length > 1  && candidate.confirmPassword === candidate.password && dispatch(
+            RegisterUserDispatcher({
+              email: candidate.email,
+              username: candidate.username,
+              phoneNumber:phoneNumber,
+              password: candidate.password,
+            })
+          );
+        //   router.push('/email-verification/candidate')
+
+        
         
     }
 

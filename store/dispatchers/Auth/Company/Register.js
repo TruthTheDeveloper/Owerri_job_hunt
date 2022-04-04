@@ -31,6 +31,8 @@ const RegisterCompanyDispatcher = (data) => async (dispatch) => {
           payload: { message: data.message },
         });
         dispatch(Toast({ error:true, message:data.message}));
+
+        console.log(data, 'the data')
       } else {
         dispatch({
           type: REGISTER_COMPANY_SUCCESS,
@@ -47,6 +49,8 @@ const RegisterCompanyDispatcher = (data) => async (dispatch) => {
         payload: { message: err.message },
       });
       dispatch(Toast({ error:true, message:err.message}));
+
+      console.log(err, 'another error')
 
     });
 };

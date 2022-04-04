@@ -1,9 +1,15 @@
 import Link from "next/link"
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import { CHECK_USER_SLUG_EXISTS } from "../../../misc/helpers/authTokenManager";
+import LoginUserDispatcher, { resetLoginStoreState } from '../../../store/dispatchers/Auth/User/Login';
+
 
 const Candidate = () => {
 
+    const LoginState = useSelector((state) => state.LoginUserDispatcher)
+    const dispatch = useDispatch()
     const router = useRouter()
 
     const [emailValidation, setEmailValidation] = useState('');
@@ -14,6 +20,21 @@ const Candidate = () => {
         password:'',
     })
 
+    useEffect(() => {
+        const fetchUserToken = async () => {
+            await CHECK_USER_SLUG_EXISTS()  && router.push("/dashboard/candidate");
+        };
+    
+        fetchUserToken();
+      }, []);
+
+      useEffect(() => {
+        if (!LoginState.error && LoginState.message.length > 0) {
+          dispatch(resetLoginStoreState());
+          router.push("/dashboard/candidate");
+        }
+      }, [LoginState.error, LoginState.message]);
+
     const submitHandler = (e) => {
         e.preventDefault()
 
@@ -22,7 +43,8 @@ const Candidate = () => {
 
 
 
-        candidate.email.length > 1 &&  candidate.password.length > 1 && router.push('/plan')
+        candidate.email.length > 1 &&  candidate.password.length > 1 &&  dispatch(LoginUserDispatcher({email:candidate.email, password:candidate.password}));
+        //  router.push('/plan')
 
         
     }

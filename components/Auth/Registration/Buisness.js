@@ -1,12 +1,18 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Select from 'react-select';
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
-
+import RegisterCompanyDispatcher from "../../../store/dispatchers/Auth/Company/Register";
+import { useDispatch, useSelector } from "react-redux";
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
+import UserAccountCreatedConfirmation from "./UserAccountCreatedConfirmation";
 
 const Buisness = () => {
+    const dispatch = useDispatch()
+    const RegisterCompanyState = useSelector(
+        (state) => state.RegisterCompanyReducer
+      );
 
     const options = [
         { value: 'Techonlogy and Media', label: 'Techonlogy and Media' },
@@ -15,7 +21,7 @@ const Buisness = () => {
         { value: 'Health', label: 'Health' },
     ]
 
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [buisnessOption, setBuisnessOption] = useState(null);
     const [phoneNumber, setPhoneNumber] = useState(undefined)
 
     const [nameValidation, setNameValidation] = useState('');
@@ -25,7 +31,13 @@ const Buisness = () => {
     const [passwordValidation, setPasswordValidation] = useState('');
     const [confirmPasswordValidation, setConfirmPasswordValidation] = useState('');
 
+    const [registerationSuccessful, setRegisterationSuccessful] = useState(false);
 
+    useEffect(() => {
+        if (RegisterCompanyState.message.length > 0) {
+          !RegisterCompanyState.error && setRegisterationSuccessful(true);
+        }
+      }, [RegisterCompanyState.error, RegisterCompanyState.message]);
 
     const router = useRouter()
 
@@ -38,7 +50,6 @@ const Buisness = () => {
         confirmBuisnessPassword:'',
 
     })
-    console.log(selectedOption, phoneNumber)
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -46,20 +57,26 @@ const Buisness = () => {
         buisness.buisnessName.length < 1 ? setNameValidation(' Please input Name') : setNameValidation('')
         buisness.buisnessEmail.length < 1 ? setEmailValidation(' Plesae input Email') : setEmailValidation('')
         phoneNumber === undefined ? setPhoneNumberValidation('Please input PhoneNumber') : setPhoneNumberValidation('')
-        selectedOption === null ? setTypeValidation('Please select buisness Type') : setTypeValidation('')
+        buisnessOption === null ? setTypeValidation('Please select buisness Type') : setTypeValidation('')
         buisness.businessPassword.length < 1 ? setPasswordValidation('Please input password') : setPasswordValidation('')
         buisness.confirmBuisnessPassword.length < 1 ? setConfirmPasswordValidation("please confirm password") : setConfirmPasswordValidation('')
         buisness.businessPassword !== buisness.confirmBuisnessPassword ? setConfirmPasswordValidation("password does not match") : setConfirmPasswordValidation('')
 
         
-        buisness.buisnessName.length > 1  && buisness.buisnessEmail.length > 1  && phoneNumber !== undefined && selectedOption !== null &&  buisness.businessPassword.length > 1  &&   buisness.confirmBuisnessPassword.length > 1 && router.push('/email-verification/buisness')
-
-
-
+        buisness.buisnessName.length > 1  && buisness.buisnessEmail.length > 1  && phoneNumber !== undefined && buisnessOption !== null &&  buisness.businessPassword.length > 1  &&   buisness.confirmBuisnessPassword === buisness.businessPassword && dispatch(
+            RegisterCompanyDispatcher({
+              company_name: buisness.buisnessName,
+              company_email_address: buisness.buisnessEmail,
+              company_password: buisness.businessPassword,
+              company_type: buisnessOption,
+              company_phoneNumber:phoneNumber
+            })
+          );
         
     }
 
-    return(
+    return registerationSuccessful ? 
+        <UserAccountCreatedConfirmation isCompany={ true } /> :
         <section className="py-48 w-full flex">
             <form className="flex flex-col mx-auto justify-center rounded-md shadow-xl w-96 px-4 border-2">
             <h1 className="text-center my-5 font-semibold" style={{color:"#14A800"}}>REGISTER AS A BUISNESS</h1>
@@ -86,10 +103,10 @@ const Buisness = () => {
                 <div className="py-4 ">
                     <label>Buisness Type</label>
                     <Select
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
+                        defaultValue={buisnessOption}
+                        onChange={setBuisnessOption}
                         options={options}
-                        className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
+                        className="h-10 w-full outline-none border mt-4 border-green-500  rounded-md"
                     />
                     <p className="text-red-600">{typeValidation}</p>
 
@@ -113,7 +130,6 @@ const Buisness = () => {
                     </div>
             </form>
         </section>
-    )
     
 }
 

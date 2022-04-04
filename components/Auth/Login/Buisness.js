@@ -1,11 +1,14 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useSelector, useDispatch } from "react-redux";
+import LoginCompanyDispatcher, { resetLoginCompanyStoreState } from "../../../store/dispatchers/Auth/Company/Login";
 
 const Buisness = () => {
 
     const router = useRouter()
-
+    const dispatch = useDispatch();
+    const LoginCompanyState = useSelector(state => state.LoginCompanyReducer);
     
     const [emailValidation, setEmailValidation] = useState('');
     const [passwordValidation, setPasswordValidation] = useState('');
@@ -16,6 +19,15 @@ const Buisness = () => {
 
     })
 
+    useEffect(() => {
+        if (LoginCompanyState.message.length > 0) {
+            if (!LoginCompanyState.error) {
+                dispatch(resetLoginCompanyStoreState());
+                router.push("/dashboard/business");
+            }
+        }
+    }, [LoginCompanyState]);
+
     const submitHandler = (e) => {
         e.preventDefault()
       
@@ -23,7 +35,8 @@ const Buisness = () => {
         buisness.businessPassword.length < 1 ? setPasswordValidation('Please input password') : setPasswordValidation('')
     
 
-        buisness.buisnessEmail.length > 1 &&  buisness.businessPassword.length > 1 && router.push('/plan/buisnessPlan')
+        buisness.buisnessEmail.length > 1 &&  buisness.businessPassword.length > 1 && dispatch(LoginCompanyDispatcher({company_email:buisness.buisnessEmail,company_password:buisness.businessPassword}))
+        // router.push('/plan/buisnessPlan')
         
     }
 
