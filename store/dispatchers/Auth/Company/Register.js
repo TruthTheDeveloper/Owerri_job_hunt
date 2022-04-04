@@ -25,6 +25,7 @@ const RegisterCompanyDispatcher = (data) => async (dispatch) => {
       return res.json();
     })
     .then((data) => {
+      console.log(data)
       if (ERROR) {
         dispatch({
           type: REGISTER_COMPANY_ERROR,

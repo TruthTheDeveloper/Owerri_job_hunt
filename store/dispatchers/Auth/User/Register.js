@@ -35,6 +35,7 @@ const RegisterUserDispatcher = (data) => async (dispatch) => {
           type: REGISTER_SUCCESS,
           payload: { message: data.message, user: data.data.user },
         });
+        console.log(data)
         
         dispatch(Toast({ error:false, message: data.message }));
       }

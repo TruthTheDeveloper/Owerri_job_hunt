@@ -39,6 +39,7 @@ const GetCompanyFromSlug = (data) => async (dispatch) => {
                 token: data.data.token, isActive: data.data.company.company_is_active
             },
         });
+
       }
     })
     .catch((err) => {
