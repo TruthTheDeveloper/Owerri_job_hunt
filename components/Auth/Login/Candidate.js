@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { CHECK_USER_SLUG_EXISTS } from "../../../misc/helpers/authTokenManager";
@@ -8,7 +8,7 @@ import LoginUserDispatcher, { resetLoginStoreState } from '../../../store/dispat
 
 const Candidate = () => {
 
-    const LoginState = useSelector((state) => state.LoginUserDispatcher)
+    const LoginState = useSelector((state) => state.LoginUserReducer)
     const dispatch = useDispatch()
     const router = useRouter()
 
