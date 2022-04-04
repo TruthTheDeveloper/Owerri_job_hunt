@@ -4,6 +4,9 @@ import hambuger from '../../../images/menu.png';
 import close from '../../../images/close.png';
 import { useState } from 'react';
 import Link from 'next/link';
+
+
+
 const NavBar = () => {
 
     const [open , setOpen] = useState(false)
@@ -12,7 +15,7 @@ const NavBar = () => {
         <>
         <nav className="bg-white flex flex-col lg:flex-row py-4 fixed w-full z-20 overflow-hidden">
             <div className="flex">
-                <h1 className="lg:text-4xl text-3xl font-bold ml-2 ">Owerri <span className="text-green-700" >JobHunt</span></h1>
+                <Link href="/"><h1 className="lg:text-4xl text-3xl font-bold ml-2 ">Owerri <span className="text-green-700" >JobHunt</span></h1></Link>
 
                 {
                     open ? <div className="ml-auto mr-4 cursor-pointer lg:hidden" onClick={() =>setOpen(prev => !prev)} >

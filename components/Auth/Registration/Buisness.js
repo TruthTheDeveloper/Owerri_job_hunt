@@ -34,7 +34,7 @@ const Buisness = () => {
     const [registerationSuccessful, setRegisterationSuccessful] = useState(false);
 
     useEffect(() => {
-        if (RegisterCompanyState.message.length > 0) {
+        if (RegisterCompanyState.message?.length > 0) {
           !RegisterCompanyState.error && setRegisterationSuccessful(true);
         }
       }, [RegisterCompanyState.error, RegisterCompanyState.message]);

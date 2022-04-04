@@ -21,7 +21,7 @@ const BuisnessPlan = () => {
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
     customer: {
-      email: GetCompanyFromSlug.company.registered_by,
+      email: GetCompanyFromSlug.company.registered_by.email,
       phonenumber: GetCompanyFromSlug.company.company_mobile_contact,
       name: GetCompanyFromSlug.company.company_name,
     },

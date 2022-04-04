@@ -7,9 +7,6 @@ import Button from "../../../misc/Button";
 import Loader from "../../../misc/Loader";
 
 const UserAccountCreatedConfirmation = ({ isCompany }) => {
-  useEffect(() => {
-    alert(isCompany);
-  });
   const AppLoading = useSelector((state) => state.AppLoadingReducer.loading);
   const UserResendActivationEmailData = useSelector(
     (state) => state.ResendUserAccountActivation
