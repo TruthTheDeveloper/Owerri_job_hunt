@@ -54,7 +54,7 @@ const Candidate = () => {
             <form className="flex flex-col mx-auto justify-center rounded-md shadow-xl w-96 px-4 border-2">
                 <h1 className="text-center my-5 font-semibold" style={{color:"#14A800"}}>LOGIN AS A CANDIDATE</h1>
                 <div className="py-4 w-full ">
-                    <label>Eamil</label><br/>
+                    <label>Email</label><br/>
                     <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='email' onChange={(e) => setCandidate({...candidate, email:e.target.value})}/>
                     <p className="text-red-600">{emailValidation}</p>
                 </div>
