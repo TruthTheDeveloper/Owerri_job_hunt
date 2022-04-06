@@ -82,10 +82,10 @@ const Candidate = () => {
   return (
     <>
       {registeratonSuccess ? (
-        <CandidateEmailValidationAlert />
+        <CandidateEmailValidationAlert isCompany={ false }/>
       ) : (
         <section className="py-48 w-full flex">
-          <form className="flex flex-col mx-auto justify-center rounded-md shadow-xl w-96 px-4 border-2">
+          <form className="flex flex-col mx-auto justify-center rounded-md shadow-xl w-96 px-4 border-2" autoComplete="on">
             <h1
               className="text-center my-5 font-semibold"
               style={{ color: "#14A800" }}

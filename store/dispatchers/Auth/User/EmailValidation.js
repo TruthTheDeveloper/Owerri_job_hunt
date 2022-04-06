@@ -8,7 +8,7 @@ import Toast from "../../Utils/Toast";
 let ERROR = false;
 
 const EmailValidationDispatcher = (token) => async (dispatch) => {
-  let URL = `${BACKEND_DOMAIN}users/complete-user-email-activation/${token}`;
+  let URL = `${BACKEND_DOMAIN}api/user/candidate/complete-user-email-activation/${token}`;
   dispatch(AppLoadingDispatcher(true));
 
   let params = requestParamsParser("GET");

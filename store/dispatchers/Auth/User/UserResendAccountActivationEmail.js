@@ -10,7 +10,8 @@ import Toast from "../../Utils/Toast";
 let ERROR = false;
 
 const UserResendActivationEmail = (company=false) => async ( dispatch, getState ) => {
-  let URL = `${BACKEND_DOMAIN}api/user/candidate/resendUserRegterationEmail/${company? getState().RegisterCompanyReducer.company.registered_by.id:getState().RegisterUserReducer.user.id}`;
+
+  let URL = `${BACKEND_DOMAIN}api/user/candidate/resendUserRegisterationEmail/${company? getState().RegisterCompanyReducer.company.registered_by.id:getState().RegisterUserReducer.user.id}`;
   dispatch(AppLoadingDispatcher(true));
 
   let params = requestParamsParser("GET");
@@ -37,7 +38,7 @@ const UserResendActivationEmail = (company=false) => async ( dispatch, getState 
           type: USER_EMAIL_RESEND_SUCCESS,
           payload: { message: data.message},
         });
-        dispatch(Toast({ error:true, message: data.message }))
+        dispatch(Toast({ error:false, message: data.message }))
 
       }
     })

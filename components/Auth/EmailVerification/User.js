@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../../misc/Loader";
+import UserResendActivationEmail from "../../../store/dispatchers/Auth/User/UserResendAccountActivationEmail";
 
 const Candidate = ({ isCompany }) => {
+  
   const { loading: AppLoading } = useSelector(
     (state) => state.AppLoadingReducer.loading
   );
@@ -11,8 +14,8 @@ const Candidate = ({ isCompany }) => {
   const handleRequestEmailResend = async (e) => {
     e.preventDefault();
     isCompany
-      ? await dispatch(UserResendActivationEmail())
-      : await dispatch(UserResendActivationEmail(true));
+      ? await dispatch(UserResendActivationEmail(true))
+      : await dispatch(UserResendActivationEmail());
   };
 
   return (
