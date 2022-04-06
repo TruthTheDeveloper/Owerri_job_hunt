@@ -1,7 +1,7 @@
 import candidate from '../profile';
 import angel from '../images/talents/vitalis.jpg';
 import Image from 'next/image';
-import Link from 'next/Link';
+import Link from 'next/link';
 // import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faLocation } from '@fortawesome/free-solid-svg-icons';
