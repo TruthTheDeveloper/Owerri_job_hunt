@@ -38,7 +38,10 @@ const RegisterUserDispatcher = (data) => async (dispatch) => {
           type: REGISTER_SUCCESS,
           payload: { message: data.message, user: data.data.user },
         });
+<<<<<<< HEAD
         console.log(data, 'data data')
+=======
+>>>>>>> 58e0bb0783759748581ebcdc254e095eb4dbbe35
         
         dispatch(Toast({ error:false, message: data.message }));
       }

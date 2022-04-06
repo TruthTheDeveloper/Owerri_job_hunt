@@ -3,15 +3,20 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import LoginCompanyDispatcher, { resetLoginCompanyStoreState } from "../../../store/dispatchers/Auth/Company/Login";
+<<<<<<< HEAD
 import { faEye} from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+=======
+import Loader from "../../../misc/Loader";
+>>>>>>> 58e0bb0783759748581ebcdc254e095eb4dbbe35
 
 const Buisness = () => {
 
     const router = useRouter()
     const dispatch = useDispatch();
     const LoginCompanyState = useSelector(state => state.LoginCompanyReducer);
+    const { loading:AppLoading } = useSelector(state => state.AppLoadingReducer);
     
     const [emailValidation, setEmailValidation] = useState('');
     const [passwordValidation, setPasswordValidation] = useState('');
@@ -74,7 +79,8 @@ const Buisness = () => {
                     <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)} icon={faEyeSlash} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>}
                     <p className="text-red-600">{passwordValidation}</p>
                 </div>
-                <button onClick={submitHandler} className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg" style={{backgroundColor:"#14A800"}}>Log In</button>
+                
+                <button onClick={submitHandler} className={`w-48 mx-auto h-12 text-white rounded-full my-6 text-lg ${AppLoading && 'btn-loading'}`} style={{backgroundColor:"#14A800"}}>{ AppLoading ? <Loader color="#fff" />:"Log In"}</button>
                     <div className="flex flex-col">
                         <div className="flex">
                             <h1 className="py-2 pr-1 " style={{color:"#14A800"}}>Dont have an account ?</h1>

@@ -1,14 +1,15 @@
-import requestParamsParser from "../../../../../misc/helpers/requestParamsParser";
-import AppLoadingDispatcher from "../../../Utils/AppLoading";
-import { BACKEND_DOMAIN } from "../../../../../misc/helpers/Backend";
-import { USER_EMAIL_VALIDATION_ERROR, USER_EMAIL_VALIDATION_RESET, USER_EMAIL_VALIDATION_SUCCESS } from "../../../Actions/Auth/UserEmailValidation";
+import requestParamsParser from "../../../../misc/helpers/requestParamsParser";
+import AppLoadingDispatcher from "../../Utils/AppLoading";
+import { BACKEND_DOMAIN } from "../../../../misc/helpers/Backend";
+import { USER_EMAIL_VALIDATION_ERROR, USER_EMAIL_VALIDATION_RESET, USER_EMAIL_VALIDATION_SUCCESS } from "../../../Actions/Auth/User/UserEmailValidation";
+import Toast from "../../Utils/Toast";
+
 
 let ERROR = false;
 
 const EmailValidationDispatcher = (token) => async (dispatch) => {
-  let URL = `${BACKEND_DOMAIN}users/complete-user-email-activation/${token}`;
+  let URL = `${BACKEND_DOMAIN}api/user/candidate/complete-user-email-activation/${token}`;
   dispatch(AppLoadingDispatcher(true));
-  console.log("From the dispatcher");
 
   let params = requestParamsParser("GET");
   await fetch(URL, params)
@@ -27,11 +28,13 @@ const EmailValidationDispatcher = (token) => async (dispatch) => {
           type: USER_EMAIL_VALIDATION_ERROR,
           payload: { message: data.message },
         });
+        dispatch(Toast({ error:true, message: data.message }));
       } else {
         dispatch({
           type: USER_EMAIL_VALIDATION_SUCCESS,
           payload: { message: data.message, user: data.data.user},
         });
+        dispatch(Toast({ error:false, message: data.message }));
       }
     })
     .catch((err) => {
@@ -40,6 +43,7 @@ const EmailValidationDispatcher = (token) => async (dispatch) => {
         type: USER_EMAIL_VALIDATION_ERROR,
         payload: { message: err.message },
       });
+      dispatch(Toast({ error:true, message: err.message }));
     });
 };
 

@@ -4,9 +4,13 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { CHECK_USER_SLUG_EXISTS } from "../../../misc/helpers/authTokenManager";
 import LoginUserDispatcher, { resetLoginStoreState } from '../../../store/dispatchers/Auth/User/Login';
+<<<<<<< HEAD
 import { faEye} from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+=======
+import Loader from "../../../misc/Loader";
+>>>>>>> 58e0bb0783759748581ebcdc254e095eb4dbbe35
 
 
 const Candidate = () => {
@@ -20,6 +24,8 @@ const Candidate = () => {
     
     const [emailValidation, setEmailValidation] = useState('');
     const [passwordValidation, setPasswordValidation] = useState('');
+    const { loading:AppLoading } = useSelector(state => state.AppLoadingReducer);
+
 
     const [candidate, setCandidate] = useState({
         email:'',
@@ -60,7 +66,7 @@ const Candidate = () => {
             <form className="flex flex-col mx-auto justify-center rounded-md shadow-xl w-96 px-4 border-2">
                 <h1 className="text-center my-5 font-semibold" style={{color:"#14A800"}}>LOGIN AS A CANDIDATE</h1>
                 <div className="py-4 w-full ">
-                    <label>Eamil</label><br/>
+                    <label>Email</label><br/>
                     <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='email' onChange={(e) => setCandidate({...candidate, email:e.target.value})}/>
                     <p className="text-red-600">{emailValidation}</p>
                 </div>
@@ -84,7 +90,7 @@ const Candidate = () => {
                     />
                     <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)} icon={faEyeSlash} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>}
                 </div>
-                <button onClick={submitHandler} className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg" style={{backgroundColor:"#14A800"}}>Log In</button>
+                <button onClick={submitHandler} className={`w-48 mx-auto h-12 text-white rounded-full my-6 text-lg ${AppLoading && 'btn-loading'}`} style={{backgroundColor:"#14A800"}}>{ AppLoading ? <Loader color="#fff" />:"Log In"}</button>
                 <div className="flex flex-col">
                         <div className="flex">
                             <h1 className="py-2 pr-1 " style={{color:"#14A800"}}>Dont have an account ?</h1>

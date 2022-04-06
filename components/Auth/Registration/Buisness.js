@@ -6,16 +6,23 @@ import RegisterCompanyDispatcher from "../../../store/dispatchers/Auth/Company/R
 import { useDispatch, useSelector } from "react-redux";
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
+<<<<<<< HEAD
 import UserAccountCreatedConfirmation from "./UserAccountCreatedConfirmation";
 import { faEye} from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+=======
+import CandidateEmailValidationAlert from "../EmailVerification/User";
+import Loader from "../../../misc/Loader";
+>>>>>>> 58e0bb0783759748581ebcdc254e095eb4dbbe35
 
 const Buisness = () => {
     const dispatch = useDispatch()
     const RegisterCompanyState = useSelector(
         (state) => state.RegisterCompanyReducer
       );
+  const { loading:AppLoading } = useSelector(state => state.AppLoadingReducer);
+
 
     const options = [
         { value: 'Techonlogy and Media', label: 'Techonlogy and Media' },
@@ -81,7 +88,7 @@ const Buisness = () => {
     }
 
     return registerationSuccessful ? 
-        <UserAccountCreatedConfirmation isCompany={ true } /> :
+        <CandidateEmailValidationAlert isCompany={ true } /> :
         <section className="py-48 w-full flex">
             <form className="flex flex-col mx-auto justify-center rounded-md shadow-xl w-96 px-4 border-2">
             <h1 className="text-center my-5 font-semibold" style={{color:"#14A800"}}>REGISTER AS A BUISNESS</h1>
@@ -167,7 +174,7 @@ const Buisness = () => {
                         </div>}
                     <p className="text-red-600">{confirmPasswordValidation}</p>
                 </div>
-                    <button className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg" onClick={submitHandler} style={{backgroundColor:"#14A800"}}>Sign Up</button>
+                    <button className={`w-48 mx-auto h-12 text-white rounded-full my-6 text-lg ${AppLoading && 'btn-loading'}`} onClick={submitHandler} style={{backgroundColor:"#14A800"}}>{ AppLoading ? <Loader color="#fff"/>:"Sign Up"}</button>
                     <div className="flex">
                         <h1 className="py-2 pr-1 " style={{color:"#14A800"}}>Already have an account ?</h1>
                         <Link href="/buisness/login">
