@@ -5,16 +5,13 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useDispatch, useSelector } from "react-redux";
 import RegisterUserDispatcher from "../../../store/dispatchers/Auth/User/Register";
-<<<<<<< HEAD
-import CandidateEmailValidationAlert from "../EmailVerification/Candidate";
+// import CandidateEmailValidationAlert from "../EmailVerification/Candidate";
 import { faEye} from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-=======
 import CandidateEmailValidationAlert from "../EmailVerification/User";
 import Loader from "../../../misc/Loader";
->>>>>>> 58e0bb0783759748581ebcdc254e095eb4dbbe35
 
 
 const Candidate = () => {

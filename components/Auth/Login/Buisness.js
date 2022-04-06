@@ -3,13 +3,10 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import LoginCompanyDispatcher, { resetLoginCompanyStoreState } from "../../../store/dispatchers/Auth/Company/Login";
-<<<<<<< HEAD
 import { faEye} from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-=======
 import Loader from "../../../misc/Loader";
->>>>>>> 58e0bb0783759748581ebcdc254e095eb4dbbe35
 
 const Buisness = () => {
 
@@ -88,7 +85,7 @@ const Buisness = () => {
                                 <span className="py-2 underline cursor-pointer" style={{color:"#14A800"}}>Sign Up</span>
                             </Link>
                         </div>
-                        <Link href="/forget-password/candidate">
+                        <Link href="/forget-password/buisness">
                             <h1 className="py-2 pr-2 cursor-pointer" style={{color:"#14A800"}}>ForgetPassword</h1>
                         </Link>
                         

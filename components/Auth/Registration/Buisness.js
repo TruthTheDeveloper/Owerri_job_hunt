@@ -6,15 +6,12 @@ import RegisterCompanyDispatcher from "../../../store/dispatchers/Auth/Company/R
 import { useDispatch, useSelector } from "react-redux";
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
-<<<<<<< HEAD
 import UserAccountCreatedConfirmation from "./UserAccountCreatedConfirmation";
 import { faEye} from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-=======
 import CandidateEmailValidationAlert from "../EmailVerification/User";
 import Loader from "../../../misc/Loader";
->>>>>>> 58e0bb0783759748581ebcdc254e095eb4dbbe35
 
 const Buisness = () => {
     const dispatch = useDispatch()
