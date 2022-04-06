@@ -6,6 +6,10 @@ import PhoneInput from "react-phone-number-input";
 import { useDispatch, useSelector } from "react-redux";
 import RegisterUserDispatcher from "../../../store/dispatchers/Auth/User/Register";
 import CandidateEmailValidationAlert from "../EmailVerification/Candidate";
+import { faEye} from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 const Candidate = () => {
@@ -16,6 +20,8 @@ const Candidate = () => {
   const [registeratonSuccess, setRegisteratonStatus] = useState(false);
 
   const [phoneNumber, setPhoneNumber] = useState();
+
+  const [eyeOpen, setEyeOpen] = useState();
 
   const [nameValidation, setNameValidation] = useState("");
   const [phoneNumberValidation, setPhoneNumberValidation] = useState("");
@@ -125,13 +131,21 @@ const Candidate = () => {
             <div className="py-4 ">
               <label>Password</label>
               <br />
-              <input
+              {eyeOpen ? <div className="flex bg-red-400 "><input
                 className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
                 type="password"
                 onChange={(e) =>
                   setCandidate({ ...candidate, password: e.target.value })
                 }
               />
+              <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faEye} className="w-4 h-4 mx-1 mt-2"  /></div>:<><input
+                className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
+                type="password"
+                onChange={(e) =>
+                  setCandidate({ ...candidate, password: e.target.value })
+                }
+              />
+              <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faEye} className="w-4 h-4 mx-1 mt-2"  /></>}
               <p className="text-red-600">{passwordValidation}</p>
             </div>
             <div className="py-4 ">
@@ -147,6 +161,7 @@ const Candidate = () => {
                   })
                 }
               />
+              <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faEye} className="w-4 h-4 mx-1 mt-2"  />
               <p className="text-red-600">{confirmPasswordValidation}</p>
             </div>
             <button
