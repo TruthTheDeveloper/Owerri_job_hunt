@@ -1,4 +1,4 @@
-import Buisness from "../../components/Auth/EmailVerification/Buisness";
+import Buisness from "../../components/Auth/EmailVerification/User";
 
 const EmailVerification = () => {
 

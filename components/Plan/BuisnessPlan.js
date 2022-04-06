@@ -21,7 +21,7 @@ const BuisnessPlan = () => {
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
     customer: {
-      email: GetCompanyFromSlug.company.registered_by.email,
+      email: GetCompanyFromSlug.company?.registered_by_?.id,
       phonenumber: GetCompanyFromSlug.company.company_mobile_contact,
       name: GetCompanyFromSlug.company.company_name,
     },
@@ -40,7 +40,7 @@ const BuisnessPlan = () => {
     if (status.status === "successful") {
         dispatch(
             UpdateCompanyPlanDispatcher({
-              company_id: GetCompanyFromSlug.company.id,
+              company_id: GetCompanyFromSlug.company.id ,
               company_current_plan: PAYMENTTYPE.PLANTYPE,
             })
           );
