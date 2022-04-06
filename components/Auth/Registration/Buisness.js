@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import UserAccountCreatedConfirmation from "./UserAccountCreatedConfirmation";
+import { faEye} from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Buisness = () => {
     const dispatch = useDispatch()
@@ -20,6 +23,8 @@ const Buisness = () => {
         { value: 'Industrial Services', label: 'Industrial Services' },
         { value: 'Health', label: 'Health' },
     ]
+    const [eyeOpenPassword, setEyeOpenPassword] = useState(false);
+    const [confirmEyePassword, setConfirmEyePassword] = useState(false);
 
     const [buisnessOption, setBuisnessOption] = useState(null);
     const [phoneNumber, setPhoneNumber] = useState(undefined)
@@ -113,12 +118,53 @@ const Buisness = () => {
                 </div>
                 <div>
                     <label>Password</label>
-                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='password' onChange={(e) => setBuisness({...buisness, businessPassword:e.target.value})}/>
+                    {eyeOpenPassword ? <div className="flex h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"><input
+                        className="outline-none w-full"
+                        type="text"
+                        onChange={(e) =>
+                        setBuisness({ ...buisness, businessPassword: e.target.value })
+                        }
+                    />
+                    <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)}  icon={faEye} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>
+
+                    :<div className=" h-10 flex outline-none w-full border mt-4 border-green-500 pl-2 rounded-md "><input
+                        className="outline-none w-full"
+                        type="password"
+                        onChange={(e) =>
+                        setBuisness({ ...buisness, businessPassword: e.target.value })
+                        }
+                    />
+                    <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)} icon={faEyeSlash} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>}
                    <p className="text-red-600">{passwordValidation}</p>
                 </div>
-                <div>
-                    <label>Confirm Password</label>
-                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='password' onChange={(e) => setBuisness({...buisness, confirmBuisnessPassword:e.target.value})}/>
+                <div className="mt-4">
+                    <label className="">Confirm Password</label>
+                    {confirmEyePassword ? <div className="h-10 flex w-full outline-none border mt-4 border-green-500 pl-2 rounded-md">
+                            <input
+                            className="outline-none w-full"
+                            type="text"
+                            onChange={(e) =>
+                            setBuisness({
+                                ...buisness,
+                                confirmBuisnessPassword: e.target.value,
+                            })
+                            }
+                        />
+                        <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setConfirmEyePassword(prev => !prev)}  icon={faEye} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  />
+                        </div>
+                        :<div className="h-10 w-full flex outline-none border mt-4 border-green-500 pl-2 rounded-md">
+                            <input
+                            className="outline-none w-full"
+                            type="password"
+                            onChange={(e) =>
+                            setBuisness({
+                                ...buisness,
+                                confirmBuisnessPassword: e.target.value,
+                            })
+                            }
+                        />
+                        <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setConfirmEyePassword(prev => !prev)} icon={faEyeSlash} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  />
+                        </div>}
                     <p className="text-red-600">{confirmPasswordValidation}</p>
                 </div>
                     <button className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg" onClick={submitHandler} style={{backgroundColor:"#14A800"}}>Sign Up</button>

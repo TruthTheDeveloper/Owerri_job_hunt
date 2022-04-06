@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { CHECK_USER_SLUG_EXISTS } from "../../../misc/helpers/authTokenManager";
 import LoginUserDispatcher, { resetLoginStoreState } from '../../../store/dispatchers/Auth/User/Login';
+import { faEye} from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const Candidate = () => {
@@ -12,6 +15,9 @@ const Candidate = () => {
     const dispatch = useDispatch()
     const router = useRouter()
 
+    const [eyeOpenPassword, setEyeOpenPassword] = useState(false);
+
+    
     const [emailValidation, setEmailValidation] = useState('');
     const [passwordValidation, setPasswordValidation] = useState('');
 
@@ -60,8 +66,23 @@ const Candidate = () => {
                 </div>
                 <div className="py-4 ">
                     <label>Password</label><br/>
-                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='password' onChange={(e) => setCandidate({...candidate, password:e.target.value})}/>
-                    <p className="text-red-600">{passwordValidation}</p>
+                    {eyeOpenPassword ? <div className="flex h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"><input
+                        className="outline-none w-full"
+                        type="text"
+                        onChange={(e) =>
+                        setCandidate({ ...candidate, password: e.target.value })
+                        }
+                    />
+                    <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)}  icon={faEye} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>
+
+                    :<div className=" h-10 flex outline-none w-full border mt-4 border-green-500 pl-2 rounded-md "><input
+                        className="outline-none w-full"
+                        type="password"
+                        onChange={(e) =>
+                        setCandidate({ ...candidate, password: e.target.value })
+                        }
+                    />
+                    <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)} icon={faEyeSlash} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>}
                 </div>
                 <button onClick={submitHandler} className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg" style={{backgroundColor:"#14A800"}}>Log In</button>
                 <div className="flex flex-col">

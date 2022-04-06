@@ -21,7 +21,8 @@ const Candidate = () => {
 
   const [phoneNumber, setPhoneNumber] = useState();
 
-  const [eyeOpen, setEyeOpen] = useState();
+  const [eyeOpenPassword, setEyeOpenPassword] = useState(false);
+  const [confirmEyePassword, setConfirmEyePassword] = useState(false);
 
   const [nameValidation, setNameValidation] = useState("");
   const [phoneNumberValidation, setPhoneNumberValidation] = useState("");
@@ -131,28 +132,32 @@ const Candidate = () => {
             <div className="py-4 ">
               <label>Password</label>
               <br />
-              {eyeOpen ? <div className="flex bg-red-400 "><input
-                className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
+              {eyeOpenPassword ? <div className="flex h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"><input
+                className="outline-none w-full"
+                type="text"
+                onChange={(e) =>
+                  setCandidate({ ...candidate, password: e.target.value })
+                }
+              />
+              <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)}  icon={faEye} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>
+
+              :<div className=" h-10 flex outline-none w-full border mt-4 border-green-500 pl-2 rounded-md "><input
+                className="outline-none w-full"
                 type="password"
                 onChange={(e) =>
                   setCandidate({ ...candidate, password: e.target.value })
                 }
               />
-              <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faEye} className="w-4 h-4 mx-1 mt-2"  /></div>:<><input
-                className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
-                type="password"
-                onChange={(e) =>
-                  setCandidate({ ...candidate, password: e.target.value })
-                }
-              />
-              <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faEye} className="w-4 h-4 mx-1 mt-2"  /></>}
+              <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)} icon={faEyeSlash} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>}
+              
               <p className="text-red-600">{passwordValidation}</p>
             </div>
             <div className="py-4 ">
               <label>Confirm Password</label>
               <br />
-              <input
-                className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
+              {confirmEyePassword ? <div className="h-10 flex w-full outline-none border mt-4 border-green-500 pl-2 rounded-md">
+                <input
+                className="outline-none w-full"
                 type="password"
                 onChange={(e) =>
                   setCandidate({
@@ -161,7 +166,21 @@ const Candidate = () => {
                   })
                 }
               />
-              <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faEye} className="w-4 h-4 mx-1 mt-2"  />
+              <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setConfirmEyePassword(prev => !prev)}  icon={faEye} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  />
+              </div>
+              :<div className="h-10 w-full flex outline-none border mt-4 border-green-500 pl-2 rounded-md">
+                <input
+                className="outline-none w-full"
+                type="text"
+                onChange={(e) =>
+                  setCandidate({
+                    ...candidate,
+                    confirmPassword: e.target.value,
+                  })
+                }
+              />
+              <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setConfirmEyePassword(prev => !prev)} icon={faEyeSlash} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  />
+              </div>}
               <p className="text-red-600">{confirmPasswordValidation}</p>
             </div>
             <button
