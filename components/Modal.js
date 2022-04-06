@@ -5,41 +5,44 @@ import Image from 'next/image';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faLocation } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram} from '@fortawesome/free-brands-svg-icons';
-const Modal = () => {
+const Modal = ({id, name, skill, image}) => {
+    console.log('this modal pops')
     return(
         <section className="fixed top-0 left-0 h-screen w-full z-40 overflow-y-scroll " style={{backgroundColor:'rgba(0, 0, 0, 0.774)'}}>
             <div className="flex  justify-center  my-24 md:mx-24 ">
                 <div className=" bg-white flex flex-col md:flex-row pl-24 rounded-md">
                     <div className="flex flex-col mx-auto md:pr-6   md:px-0">
-                    
+                    <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faClose} className="w-5 h-5 ml-96 mr-4 mt-2 md:hidden cursor-pointer"  />
                             <div className="my-4">
-                                <Image src={angel} width={200} height={200} layout="fixed" className="rounded-full" />
+                                <Image src={image} width={200} height={200} layout="fixed" className="rounded-full" />
                             </div>
                         
                         <div className="flex m-2 ">
-                            <a href="#"><FontAwesomeIcon size='x' style={{color:"#14A800"}}  icon={faEnvelope} className="w-4 h-4 mx-1 mt-2"  /></a> Henrysempire111@gmail.com
+                            <a href="#"><FontAwesomeIcon  style={{color:"#14A800"}}  icon={faEnvelope} className="w-4 h-4 mx-1 mt-2"  /></a> Henrysempire111@gmail.com
                         </div>
                         <div className="flex m-2 ">
-                            <a href="#"><FontAwesomeIcon size='x' style={{color:"#14A800"}}  icon={faPhone} className="w-4 h-4 mx-1 mt-1 "  /></a> +(234) 70 19035442
+                            <a href="#"><FontAwesomeIcon  style={{color:"#14A800"}}  icon={faPhone} className="w-4 h-4 mx-1 mt-1 "  /></a> +(234) 70 19035442
                         </div>
                         <div className="flex m-2 w-64 ">
-                            <a href="#"><FontAwesomeIcon size='x' style={{color:"#14A800"}}  icon={faAddressCard} className="w-4 h-4 mx-1 mt-1"  /></a>no 1 ojwku street of cherbuim junction beside UBA Bank
+                            <a href="#"><FontAwesomeIcon  style={{color:"#14A800"}}  icon={faAddressCard} className="w-4 h-4 mx-1 mt-1"  /></a>no 1 ojwku street of cherbuim junction beside UBA Bank
                         </div>
                         <div className="flex m-2 text-center  ">
-                            <a href="#"><FontAwesomeIcon size='x' style={{color:"#14A800"}}  icon={faLocation} className="w-4 h-4 mx-1 mt-1"  /></a> Owerri Imo state
+                            <a href="#"><FontAwesomeIcon  style={{color:"#14A800"}}  icon={faLocation} className="w-4 h-4 mx-1 mt-1"  /></a> Owerri Imo state
                         </div>
                         <button className="py-4 text-white w-48 ml-8 text-xl rounded-md my-12" style={{backgroundColor:"#14A800"}}>Hire Talent</button>
                     </div>
                     <div className="mx-auto">
                         <div className=" ">
-                            <h1 className=" text-4xl sm:text-5xl  m-4 text-center md:text-left">{candidate[0].name}</h1>
-                            <h2 className="text-3xl m-4 text-center">{candidate[0].skill}</h2>
+                            <FontAwesomeIcon size='x' style={{color:"#14A800"}}  icon={faClose} className="w-4 h-4 ml-96 mr-4 mt-2 hidden md:block cursor-pointer"  />
+                            <h1 className=" text-4xl sm:text-5xl  m-4 text-center md:text-left">{name}</h1>
+                            <h2 className="text-3xl m-4 text-center">{skill}</h2>
 
                             <div className="flex items-center justify-center">
                             <div className="border-2 bg-black h-0 p-0 border-black w-12"></div> 
@@ -47,7 +50,7 @@ const Modal = () => {
                             <div className="border-2 bg-black h-0 p-0 border-black w-12"></div>
                             </div>
                             <div className="w-96 mt-4 px-8 sm:mx-8 md:px-0 md:mx-0">
-                                <p>Hi i am {candidate[0].name} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u</p>
+                                <p>Hi i am {name} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u</p>
                             </div>
                             <div className="flex items-center justify-center mt-10">
                             <div className="border-2 bg-black h-0 p-0 border-black w-12"></div> 
