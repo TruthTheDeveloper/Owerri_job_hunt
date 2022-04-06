@@ -44,13 +44,9 @@ const Talent = () => {
 
     
     const profileHandler = (id, name, skill, image,) => {
-      console.log(modal)
-
-      modal = <Modal id={id} name={name} skill={skill} image={image} />
-      console.log(modal)
-
-
-      // router.push(`profile/${id}`)
+      setOpenProfile(true)
+      modal = <Modal id={id} name={name} skill={skill} image={image} close={openProfile} closeModal={() => setOpenProfile(false)} />
+      
     }
 
 
@@ -96,33 +92,33 @@ const Talent = () => {
             </div>
           </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white shadow-lg border flex flex-col lg:mx-12 lg:px-8 lg:pt-4 md:mx-16 md:px-6 mx-8 px-4 pt-2">
+          <div className="bg-white shadow-lg border flex flex-col xl:mx-12 xl:px-8 lg:mx-8 lg:px-6 lg:pt-4 md:mx-16 md:px-6 mx-8 px-4 pt-2">
             <Image src={jane} height={250} width={250} alt="info"/>
             <h1 className="text-lg font-semibold mt-4">Angel vitalis</h1>
               <p className="text-center text-xl my-4">Graphic Designer</p>
-              <button onClick={() => profileHandler(3, 'Angel vitalis', 'Graphic Designer')}  className="xl:w-48 xl:mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
+              <button onClick={() => profileHandler(3, 'Angel vitalis', 'Graphic Designer', jane)}  className="xl:w-48 xl:mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
           </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white shadow-lg border flex flex-col lg:mx-12 lg:px-8 lg:pt-4 md:mx-16 md:px-6 mx-8 px-4 pt-2">
+          <div className="bg-white shadow-lg border flex flex-col xl:mx-12 xl:px-8 lg:mx-8 lg:px-6 lg:pt-4 md:mx-16 md:px-6 mx-8 px-4 pt-2">
             <Image src={marvis} height={250} width={250} alt="info"/>
             <h1 className="text-lg font-semibold mt-4">Jane Bolagi</h1>
               <p className="text-center text-xl my-4">Project Manager</p>
-              <button onClick={() => profileHandler(4, 'Jane Bolagi', 'Project Manager')}  className="xl:w-48 xl:mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
+              <button onClick={() => profileHandler(4, 'Jane Bolagi', 'Project Manager', marvis)}  className="xl:w-48 xl:mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-white shadow-lg border flex flex-col lg:mx-12 lg:px-8 lg:pt-4 md:mx-16 md:px-6 mx-8 px-4 pt-2 mb-12">
+          <div className="bg-white shadow-lg border flex flex-col xl:mx-12 xl:px-8 lg:mx-8 lg:px-6 lg:pt-4 md:mx-16 md:px-6 mx-8 px-4 pt-2 mb-24">
             <Image src={vitalis} height={250} width={250} alt="info"/>
             <h1 className="text-lg font-semibold mt-4">Marvis Chukwu</h1>
               <p className="text-center text-xl my-4">UIUX Designer</p>
-              <button onClick={() => profileHandler(5, '')}  className="xl:w-48 xl:mx-auto mr-4 h-12 text-white rounded-lg my-6  text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
+              <button onClick={() => profileHandler(5, 'Marvis Chukwu', 'UIUX Designer', vitalis)}  className="xl:w-48 xl:mx-auto mr-4 h-12 text-white rounded-lg my-6  text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
         </SwiperSlide>
       </Swiper>
         
         </section>
-        modal
+        {openProfile && modal}
       </>
     )
 }

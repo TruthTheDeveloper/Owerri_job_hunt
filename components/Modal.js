@@ -1,6 +1,7 @@
 import candidate from '../profile';
 import angel from '../images/talents/vitalis.jpg';
 import Image from 'next/image';
+import Link from 'next/Link';
 // import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faLocation } from '@fortawesome/free-solid-svg-icons';
@@ -12,14 +13,16 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram} from '@fortawesome/free-brands-svg-icons';
-const Modal = ({id, name, skill, image}) => {
+const Modal = ({id, name, skill, image, close, closeModal}) => {
     console.log('this modal pops')
+
+
     return(
         <section className="fixed top-0 left-0 h-screen w-full z-40 overflow-y-scroll " style={{backgroundColor:'rgba(0, 0, 0, 0.774)'}}>
             <div className="flex  justify-center  my-24 md:mx-24 ">
                 <div className=" bg-white flex flex-col md:flex-row pl-24 rounded-md">
-                    <div className="flex flex-col mx-auto md:pr-6   md:px-0">
-                    <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faClose} className="w-5 h-5 ml-96 mr-4 mt-2 md:hidden cursor-pointer"  />
+                    <div className="flex flex-col ml-32 md:mx-auto md:ml-0 md:pr-6   md:px-0">
+                    <FontAwesomeIcon  style={{color:"#14A800"}}  icon={faClose} className="w-5 h-5 ml-96 mr-4 mt-2 md:hidden cursor-pointer" onClick={closeModal} />
                             <div className="my-4">
                                 <Image src={image} width={200} height={200} layout="fixed" className="rounded-full" />
                             </div>
@@ -36,11 +39,13 @@ const Modal = ({id, name, skill, image}) => {
                         <div className="flex m-2 text-center  ">
                             <a href="#"><FontAwesomeIcon  style={{color:"#14A800"}}  icon={faLocation} className="w-4 h-4 mx-1 mt-1"  /></a> Owerri Imo state
                         </div>
-                        <button className="py-4 text-white w-48 ml-8 text-xl rounded-md my-12" style={{backgroundColor:"#14A800"}}>Hire Talent</button>
+                        <Link href="/candidate/register">
+                            <button className="py-4 text-white w-48 ml-8 text-xl rounded-md my-12" style={{backgroundColor:"#14A800"}}>Hire Talent</button>
+                        </Link>
                     </div>
                     <div className="mx-auto">
                         <div className=" ">
-                            <FontAwesomeIcon size='x' style={{color:"#14A800"}}  icon={faClose} className="w-4 h-4 ml-96 mr-4 mt-2 hidden md:block cursor-pointer"  />
+                            <FontAwesomeIcon size='x' style={{color:"#14A800"}}  icon={faClose} className="w-4 h-4 ml-96 mr-4 mt-2 hidden md:block cursor-pointer" onClick={closeModal}  />
                             <h1 className=" text-4xl sm:text-5xl  m-4 text-center md:text-left">{name}</h1>
                             <h2 className="text-3xl m-4 text-center">{skill}</h2>
 
