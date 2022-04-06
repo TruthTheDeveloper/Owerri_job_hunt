@@ -9,7 +9,7 @@ import Toast from "../../Utils/Toast";
 
 let ERROR = false;
 
-const UserReendActivationEmail = (company=false) => async ( dispatch, getState ) => {
+const UserResendActivationEmail = (company=false) => async ( dispatch, getState ) => {
   let URL = `${BACKEND_DOMAIN}api/user/candidate/resendUserRegterationEmail/${company? getState().RegisterCompanyReducer.company.registered_by.id:getState().RegisterUserReducer.user.id}`;
   dispatch(AppLoadingDispatcher(true));
 
@@ -55,4 +55,4 @@ const UserReendActivationEmail = (company=false) => async ( dispatch, getState )
 export const resetEmailActivationStoreState = () => (dispatch) => {
   dispatch({ type: USER_EMAIL_RESEND_RESET });
 };
-export default UserReendActivationEmail;
+export default UserResendActivationEmail;

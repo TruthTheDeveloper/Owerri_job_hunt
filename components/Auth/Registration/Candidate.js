@@ -5,7 +5,8 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useDispatch, useSelector } from "react-redux";
 import RegisterUserDispatcher from "../../../store/dispatchers/Auth/User/Register";
-import CandidateEmailValidationAlert from "../EmailVerification/Candidate";
+import CandidateEmailValidationAlert from "../EmailVerification/User";
+import Loader from "../../../misc/Loader";
 
 
 const Candidate = () => {
@@ -14,6 +15,8 @@ const Candidate = () => {
   const dispatch = useDispatch();
   const RegisterUserState = useSelector((state) => state.RegisterUserReducer);
   const [registeratonSuccess, setRegisteratonStatus] = useState(false);
+  const { loading:AppLoading } = useSelector(state => state.AppLoadingReducer);
+
 
   const [phoneNumber, setPhoneNumber] = useState();
 
@@ -150,11 +153,12 @@ const Candidate = () => {
               <p className="text-red-600">{confirmPasswordValidation}</p>
             </div>
             <button
-              className="w-48 mx-auto h-12 text-white rounded-full my-6 text-lg"
+              className={`w-48 mx-auto h-12 text-white rounded-full my-6 text-lg ${AppLoading && 'btn-loading'}`}
               onClick={submitHandler}
               style={{ backgroundColor: "#14A800" }}
             >
-              Sign Up
+              { AppLoading ? <Loader color="#fff" />:"Sign Up"}
+              
             </button>
             <div className="flex">
               <h1 className="py-2 pr-1 " style={{ color: "#14A800" }}>
