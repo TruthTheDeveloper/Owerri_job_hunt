@@ -1,21 +1,28 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+//images
 import Alex from '../../../images/talents/Alex.jpg';
 import Edgar from '../../../images/talents/Edgar.jpg';
 import ikeagwu from '../../../images/talents/ikeagwu.jpg';
 import jane from '../../../images/talents/queen.jpg';
 import marvis from '../../../images/talents/marvis.jpg';
 import vitalis from '../../../images/talents/vitalis.jpg'
-import Image from 'next/image';
+
+// Reeact swiper
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+
+//next import
 import { useRouter } from "next/router";
+import Image from 'next/image';
 import Modal from "../../Modal";
+
+//constant
 import {AlexSpeech,EdgaSpeech,EbukaSpeech,AngelSpeech,JaneSpeech,MarvisSpeech} from '../../../CONSTANT';
 
 //React
-
 import { useEffect, useState } from "react";
+
 
 let modal = null;
 const Talent = () => {
@@ -25,6 +32,7 @@ const Talent = () => {
     
   const [isGreaterThan425x, setIsGreaterThan425px] = useState(1);
 
+  // adding logic to web responsivness
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 500) {
@@ -49,11 +57,6 @@ const Talent = () => {
       modal = <Modal id={id} name={name} skill={skill} speech={speech} image={image} closeModal={() => setOpenProfile(false)} />
       
     }
-
-
-
-
-
 
 
     return (
