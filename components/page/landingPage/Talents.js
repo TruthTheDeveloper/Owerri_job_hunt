@@ -54,7 +54,7 @@ const Talent = () => {
     
     const profileHandler = (name, skill,speech, image,) => {
       setOpenProfile(true)
-      modal = <Modal id={id} name={name} skill={skill} speech={speech} image={image} closeModal={() => setOpenProfile(false)} />
+      modal = <Modal  name={name} skill={skill} speech={speech} image={image} closeModal={() => setOpenProfile(false)} />
       
     }
 

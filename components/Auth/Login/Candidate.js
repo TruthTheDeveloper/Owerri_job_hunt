@@ -31,7 +31,7 @@ const Candidate = () => {
 
     useEffect(() => {
         const fetchUserToken = async () => {
-            await CHECK_USER_SLUG_EXISTS()  && router.push("/dashboard/candidate");
+            await CHECK_USER_SLUG_EXISTS()  && router.push("/plan/payment");
         };
     
         fetchUserToken();

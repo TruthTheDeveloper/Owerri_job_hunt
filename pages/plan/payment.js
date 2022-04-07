@@ -64,11 +64,19 @@ const PricingComponent = ({ index }) => {
 
   return (
     <>
-      <section className="m-20 sm:mx-48 md:mx-6 lg:mx-14 xl:mx-20 basis-1/3 cursor-pointer border-first-button scroll-to-section transform-color hover:bg-green-700 transition-all hover:text-white">
-        <div className=" rounded-md shadow-2xl hover:text-white">
+      <section className="mb-8 pt-48  sm:mx-48 md:mx-6 lg:mx-14 xl:mx-20 basis-1/3 cursor-pointer border-first-button scroll-to-section transform-color  ">
+        <div className=" rounded-md shadow-2xl hover:text-white w-80 sm:w-96 mx-auto hover:bg-green-700 transition-all ">
           <div className="py-6 text-center ">
-            <h1 className="text-2xl font-semibold">{paymentType}</h1>
-            <h1 className="py-6 text-xl">#{paymentType}</h1>
+            <h1 className="text-2xl font-semibold">BASIC</h1>
+            <h1 className="py-6 text-xl">#1000</h1>
+            <ul className="text-lg mt-5">
+            <li className="my-3">Social media buisness profile</li>
+            <li className="my-3">optimization</li>
+            <li className="my-3">Google business listing</li>
+            <li className="my-3 mx-4">
+              Buisness documentation(video & photo coverage)
+            </li>
+          </ul>
           </div>
           {/* {paymentType.BENEFITS.map((b) => (
             <div key={b} className="py-6 text-center border-current">
