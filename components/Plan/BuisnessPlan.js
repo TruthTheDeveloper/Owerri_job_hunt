@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CompanyPaymentTypes } from "../../misc/__consts__";
+import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
 import SingleBusinessPlan from "./SingleBusinessPlan";
 
 const BuisnessPlan = () => {
   const GetCompanyFromSlug = useSelector((state) => state.GetCompanyFromSlug);
+
 
   const config = p => ({
     public_key: "FLWPUBK-d2542a2ff7622c1994ace0b074b9a6ea-X",
@@ -29,9 +31,10 @@ const BuisnessPlan = () => {
 
   });
 
-  };
-
   const handleFlutterPayment = useFlutterwave(config);
+
+
+  
 
   const ContinuePaymentCompletion = async (status) => {
     
@@ -45,8 +48,8 @@ const BuisnessPlan = () => {
     } else {
         dispatch(Toast({ error:true, message:"Payment Not Completed"}))
     }
-  };
-
+ 
+  }
   return (
     <div className="py-48">
       <div className="flex flex-col md:flex-row  mx-auto justify-center">
@@ -62,5 +65,6 @@ const BuisnessPlan = () => {
       </div>
     </div>
   );
+
 };
 export default BuisnessPlan;
