@@ -1,8 +1,8 @@
-import candidate from '../profile';
-import angel from '../images/talents/vitalis.jpg';
+// next js import 
 import Image from 'next/image';
 import Link from 'next/link';
-// import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+// font awesome 
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faLocation } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +13,8 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram} from '@fortawesome/free-brands-svg-icons';
-const Modal = ({id, name, skill, image, close, closeModal}) => {
+
+const Modal = ({name, skill, image,speech, closeModal}) => {
     console.log('this modal pops')
 
 
@@ -55,11 +56,11 @@ const Modal = ({id, name, skill, image, close, closeModal}) => {
                             <div className="border-2 bg-black h-0 p-0 border-black w-12"></div>
                             </div>
                             <div className="w-96 mt-4 px-8 sm:mx-8 md:px-0 md:mx-0">
-                                <p>Hi i am {name} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u</p>
+                                <p>{speech}</p>
                             </div>
                             <div className="flex items-center justify-center mt-10">
                             <div className="border-2 bg-black h-0 p-0 border-black w-12"></div> 
-                            <p className="text-center text-lg inline mx-2 ">Connect</p>
+                            <p className="text-center text-lg inline mx-2 ">Connect With Me</p>
                             <div className="border-2 bg-black h-0 p-0 border-black w-12"></div>
                             </div>
                         </div>

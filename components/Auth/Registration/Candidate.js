@@ -162,7 +162,7 @@ const Candidate = () => {
               {confirmEyePassword ? <div className="h-10 flex w-full outline-none border mt-4 border-green-500 pl-2 rounded-md">
                 <input
                 className="outline-none w-full"
-                type="password"
+                type="text"
                 onChange={(e) =>
                   setCandidate({
                     ...candidate,
@@ -175,7 +175,7 @@ const Candidate = () => {
               :<div className="h-10 w-full flex outline-none border mt-4 border-green-500 pl-2 rounded-md">
                 <input
                 className="outline-none w-full"
-                type="text"
+                type="password"
                 onChange={(e) =>
                   setCandidate({
                     ...candidate,

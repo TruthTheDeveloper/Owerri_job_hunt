@@ -15,7 +15,7 @@ const NavBar = () => {
         <>
         <nav className="bg-white flex flex-col lg:flex-row py-4 fixed w-full z-20 overflow-hidden">
             <div className="flex">
-                <Link href="/"><h1 className="lg:text-4xl text-3xl font-bold ml-2 ">Owerri <span className="text-green-700" >JobHunt</span></h1></Link>
+                <Link href="/"><h1 className="lg:text-4xl text-3xl font-bold ml-2 ">Owerri <span className="font-bold " style={{color:"#14A800"}} >JobHunt</span></h1></Link>
 
                 {
                     open ? <div className="ml-auto mr-4 cursor-pointer lg:hidden" onClick={() =>setOpen(prev => !prev)} >

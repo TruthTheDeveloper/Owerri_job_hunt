@@ -1,12 +1,15 @@
-
-import jobhunt from '../../../images/job hunt.png';
 import Image from 'next/image';
+
+//font awesome
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import upskill from '../../../images/upskill-network.png'
+
+//image
+import upskill from '../../../images/upskill-network.png';
+import jobhunt from '../../../images/job hunt.png';
 
 
 const Footer = () => {
