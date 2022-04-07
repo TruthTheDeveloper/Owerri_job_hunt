@@ -1,9 +1,11 @@
-import Logo from '../../../images/logo.png';
 import Image from 'next/image';
+import Link from 'next/link';
+
 import hambuger from '../../../images/menu.png';
 import close from '../../../images/close.png';
+
 import { useState } from 'react';
-import Link from 'next/link';
+
 
 
 

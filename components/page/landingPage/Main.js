@@ -1,7 +1,12 @@
-import React, {useState, useEffect} from 'react'
+//react
+import React, {useState, useEffect} from 'react';
+
+//React lottie  animation
 import Lottie from 'react-lottie';
 import * as animationData from '../../../lotties/job.json';
 import * as animate from '../../../lotties/talent.json'
+
+//Aos animation
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from 'next/link';
