@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   CHECK_BUSINESS_SLUG_EXISTS,
   DELETE_COMPANY_SLUG,
-  GET_COMPANY_SLUG
+  GET_COMPANY_SLUG,
 } from "../../misc/helpers/authTokenManager";
 import { useRouter } from "next/router";
 import GetCompanyFromSlug from "../../store/dispatchers/Auth/Company/GetUserFromSlug";
@@ -17,9 +17,9 @@ const Business = () => {
   );
   const dispatch = useDispatch();
   const router = useRouter();
-  useEffect(()=>{
-    console.log(GetCompanyFromSlugState)
-  })
+  useEffect(() => {
+    console.log(GetCompanyFromSlugState);
+  });
 
   useEffect(async () => {
     !(await CHECK_BUSINESS_SLUG_EXISTS()) && router.push("/business/login");
@@ -36,16 +36,12 @@ const Business = () => {
   }, [GetCompanyFromSlugState]);
 
   return GetCompanyFromSlugState.loading ? (
-    <Loader small={ false} width={"100%"} height={ "100%"} color="black" />
-  ) : GetCompanyFromSlugState.isActive ? (
+    <Loader small={false} width={"100%"} height={"100%"} color="black" />
+  ) : false ? (
     <CompanyActive />
   ) : (
     <BuisnessPlan />
   );
 };
 
-
-
 export default Business;
-
-

@@ -70,7 +70,7 @@ const Candidate = () => {
                 <div className="flex flex-col">
                         <div className="flex">
                             <h1 className="py-2 pr-1 " style={{color:"#14A800"}}>Dont have an account ?</h1>
-                            <Link href="/buisness">
+                            <Link href="/candidate/register">
                                 <span className="py-2 underline cursor-pointer" style={{color:"#14A800"}}>Sign Up</span>
                             </Link>
                         </div>

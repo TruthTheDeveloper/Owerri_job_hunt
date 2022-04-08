@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import UserResendActivationEmail from "../../../store/dispatchers/Auth/User/UserResendAccountActivationEmail";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Button from "../../../misc/Button";
 import Loader from "../../../misc/Loader";

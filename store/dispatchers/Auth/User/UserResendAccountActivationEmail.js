@@ -11,7 +11,7 @@ let ERROR = false;
 
 const UserResendActivationEmail = (company=false) => async ( dispatch, getState ) => {
 
-  let URL = `${BACKEND_DOMAIN}api/user/candidate/resendUserRegisterationEmail/${company? getState().RegisterCompanyReducer.company.registered_by.id:getState().RegisterUserReducer.user.id}`;
+  let URL = `${BACKEND_DOMAIN}api/user/candidate/resendUserRegisterationEmail/${company? getState().RegisterCompanyReducer?.company.registered_by?.id:getState().RegisterUserReducer?.user?.id}`;
   dispatch(AppLoadingDispatcher(true));
 
   let params = requestParamsParser("GET");
