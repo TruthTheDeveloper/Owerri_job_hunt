@@ -14,12 +14,13 @@ const ContactUs = () => {
   const { loading: AppLoading } = useSelector(
     (state) => state.AppLoadingReducer
   );
-  const [formError, setFormError] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  
+  const [ messageValidationError, setMessageValidationError ] = useState("");
+  const [ emailValidationError, setEmailValidationError ] = useState("");
+  const [ subjectValidationError, setSubjectValidationError ] = useState("");
+  const [ nameValidationError, setNameValidationError ] = useState("");
+
+
 
   const {
     error: ContactUsError,
@@ -51,17 +52,17 @@ const ContactUs = () => {
     e.preventDefault();
 
     contact.name.length < 1
-      ? setFormError({ ...formError, name: "Please input Your Name" })
-      : setFormError({ ...formError, name: "" });
+      ? setNameValidationError("Please input Your Name")
+      : setNameValidationError("");
     contact.email.length < 1
-      ? setFormError({ ...formError, email: "Please input Your Email" })
-      : setFormError({ ...formError, email: "" });
+      ? setEmailValidationError("Please input Your Email")
+      : setEmailValidationError("" );
     contact.subject.length < 1
-      ? setFormError({ ...formError, subject: "Please input subject" })
-      : setFormError({ ...formError, subject: "" });
+      ? setSubjectValidationError("Please input subject")
+      : setSubjectValidationError("");
     contact.message.length < 1
-      ? setFormError({ ...formError, message: "Please input your message" })
-      : setFormError({ ...formError, message: "" });
+      ? setMessageValidationError("Please input your message")
+      : setMessageValidationError("");
 
     contact.name.length > 1 &&
       contact.email.length > 1 &&
@@ -91,7 +92,7 @@ const ContactUs = () => {
             value={contact.name}
             onChange={(e) => setContact({ ...contact, name: e.target.value })}
           />
-          {formError.name.length > 0 && <ErrorText text={formError.name} />}
+          { nameValidationError.length > 0 && <ErrorText text={ nameValidationError } />}
         </div>
 
         <div className="flex flex-col justify-center mx-16 mt-8">
@@ -101,7 +102,7 @@ const ContactUs = () => {
             value={contact.email}
             onChange={(e) => setContact({ ...contact, email: e.target.value })}
           />
-          {formError.email.length > 0 && <ErrorText text={formError.email} />}
+          {emailValidationError.length > 0 && <ErrorText text={emailValidationError} />}
         </div>
 
         <div className="flex flex-col justify-center mx-16 mt-8">
@@ -113,8 +114,8 @@ const ContactUs = () => {
               setContact({ ...contact, subject: e.target.value })
             }
           />
-          {formError.subject.length > 0 && (
-            <ErrorText text={formError.subject} />
+          {subjectValidationError.length > 0 && (
+            <ErrorText text={subjectValidationError} />
           )}
         </div>
 
@@ -127,8 +128,8 @@ const ContactUs = () => {
               setContact({ ...contact, message: e.target.value })
             }
           />
-          {formError.message.length > 0 && (
-            <ErrorText text={formError.message} />
+          { messageValidationError.length > 0 && (
+            <ErrorText text={ messageValidationError } />
           )}
         </div>
         <div className="py-8">
