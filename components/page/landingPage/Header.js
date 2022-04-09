@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
+//image
 import amazed from '../../../images/amazed.png'
 
 const Header = () => {

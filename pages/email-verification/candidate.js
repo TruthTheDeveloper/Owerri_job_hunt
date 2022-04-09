@@ -1,4 +1,4 @@
-import Candidate from "../../components/Auth/EmailVerification/Candidate";
+import Candidate from "../../components/Auth/EmailVerification/User";
 
 const EmailVerification = () => {
 

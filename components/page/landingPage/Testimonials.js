@@ -1,5 +1,8 @@
+//carousel import
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+//images
 import black2 from '../../../images/black2 1.png';
 import Woman from '../../../images/Woman1.jpeg';
 import Woman2 from '../../../images/woman2.jpeg'
@@ -7,13 +10,13 @@ import Image from 'next/image';
 
 const Testimonials = () => {
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      };
+    // const settings = {
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    //   };
 
       return (
         <section id="testimonials">
@@ -27,9 +30,7 @@ const Testimonials = () => {
         interval={6100}
       >
         <div>
-          {/* <Image src={black2} height={500} width={120}   /> */}
           <Image src={black2} height={120} width={120}  alt="testimonial" />
-          {/* <img src={black2} className="w-20 h-16" alt="" /> */}
           <div className=" myCarousel text-white" style={{backgroundColor:"#F2F7F2"}}>
             <h3 className=" text-white">Amos Liberty</h3>
             <h4 className=" text-white">Digital Markeeter</h4>
@@ -41,7 +42,6 @@ const Testimonials = () => {
         </div>
 
         <div>
-          {/* <Image src={Woman} height={500} width={120} /> */}
           <Image src={Woman} height={120} width={120} alt="testimonial"   />
           <div className="myCarousel" style={{backgroundColor:"#F2F7F2"}}>
             <h3>Chineye Ann</h3>
@@ -53,7 +53,6 @@ const Testimonials = () => {
         </div>
 
         <div>
-          {/* <Image src={Woman2} height={500} width={120} /> */}
           <Image src={Woman2} height={120} width={120} alt="testimonial"   />
           <div className="myCarousel" style={{backgroundColor:"#F2F7F2"}}>
             <h3>Queen Davidson</h3>

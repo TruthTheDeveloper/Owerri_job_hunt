@@ -1,12 +1,15 @@
-
-import jobhunt from '../../../images/job hunt.png';
 import Image from 'next/image';
+
+//font awesome
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import upskill from '../../../images/upskill-network.png'
+
+//image
+import upskill from '../../../images/upskill-network.png';
+import jobhunt from '../../../images/job hunt.png';
 
 
 const Footer = () => {
@@ -15,7 +18,7 @@ const Footer = () => {
         <footer className="">
             <div className="flex flex-col md:flex-row mt-28">
                 <div className="">
-                    <Image src={jobhunt}/>
+                    <Image src={jobhunt} alt="jobhunt"/>
                 </div>
                 <div className="ml-6 md:ml-24 md:ml-0 mt-16">
                     <div className="text-2xl" style={{color:"#14A800"}}>

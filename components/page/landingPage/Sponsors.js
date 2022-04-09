@@ -1,8 +1,13 @@
 import Image from "next/image";
+
+// Aos Animation
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+//React
 import {useEffect} from 'react'
 
+//Image
 import upskillTv from '../../../images/upskill-Tv.png';
 import upskill from '../../../images/upskill-network.png'
 import harriet from '../../../images/harriet.png';

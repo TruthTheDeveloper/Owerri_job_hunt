@@ -14,9 +14,11 @@ const BuisnessPlan = () => {
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
     customer: {
+
       email: GetCompanyFromSlug.company?.registered_by?.email,
       phonenumber: GetCompanyFromSlug.company?.company_mobile_contact,
       name: GetCompanyFromSlug.company?.company_name,
+
     },
     customizations: {
       title: p.PLANTYPE,
@@ -24,7 +26,26 @@ const BuisnessPlan = () => {
       logo:
         "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
     },
+
   });
+
+  };
+
+  const handleFlutterPayment = useFlutterwave(config);
+
+  const ContinuePaymentCompletion = async (status) => {
+    
+    if (status.status === "successful") {
+        dispatch(
+            UpdateCompanyPlanDispatcher({
+              company_id: GetCompanyFromSlug.company.id ,
+              company_current_plan: PAYMENTTYPE.PLANTYPE,
+            })
+          );
+    } else {
+        dispatch(Toast({ error:true, message:"Payment Not Completed"}))
+    }
+  };
 
   return (
     <div className="py-48">

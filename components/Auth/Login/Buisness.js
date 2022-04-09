@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import LoginCompanyDispatcher, { resetLoginCompanyStoreState } from "../../../store/dispatchers/Auth/Company/Login";
+import { faEye} from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Loader from "../../../misc/Loader";
 
 const Buisness = () => {
@@ -14,6 +17,7 @@ const Buisness = () => {
     
     const [emailValidation, setEmailValidation] = useState('');
     const [passwordValidation, setPasswordValidation] = useState('');
+    const [eyeOpenPassword, setEyeOpenPassword] = useState(false);
 
     const [buisness, setBuisness] = useState({
         buisnessEmail:'',
@@ -52,8 +56,24 @@ const Buisness = () => {
                     <p className="text-red-600">{emailValidation}</p>
                 </div>
                 <div>
-                    <label>Password</label>
-                    <input className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md" type='password' onChange={(e) => setBuisness({...buisness, businessPassword:e.target.value})}/>
+                    <label>Buisness Password</label>
+                    {eyeOpenPassword ? <div className="flex h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"><input
+                        className="outline-none w-full"
+                        type="text"
+                        onChange={(e) =>
+                        setBuisness({ ...buisness, businessPassword: e.target.value })
+                        }
+                    />
+                    <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)}  icon={faEye} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>
+
+                    :<div className=" h-10 flex outline-none w-full border mt-4 border-green-500 pl-2 rounded-md "><input
+                        className="outline-none w-full"
+                        type="password"
+                        onChange={(e) =>
+                        setBuisness({ ...buisness, businessPassword: e.target.value })
+                        }
+                    />
+                    <FontAwesomeIcon  style={{color:"#14A800"}} onClick={() => setEyeOpenPassword(prev => !prev)} icon={faEyeSlash} className="w-4 h-4 mx-1 mt-2 mr-3 cursor-pointer"  /></div>}
                     <p className="text-red-600">{passwordValidation}</p>
                 </div>
                 
@@ -61,11 +81,11 @@ const Buisness = () => {
                     <div className="flex flex-col">
                         <div className="flex">
                             <h1 className="py-2 pr-1 " style={{color:"#14A800"}}>Dont have an account ?</h1>
-                            <Link href="/buisness">
+                            <Link href="/buisness/register">
                                 <span className="py-2 underline cursor-pointer" style={{color:"#14A800"}}>Sign Up</span>
                             </Link>
                         </div>
-                        <Link href="/forget-password/candidate">
+                        <Link href="/forget-password/buisness">
                             <h1 className="py-2 pr-2 cursor-pointer" style={{color:"#14A800"}}>ForgetPassword</h1>
                         </Link>
                         
