@@ -1,10 +1,15 @@
-
 import requestParamsParser from "../../../misc/helpers/requestParamsParser";
 import AppLoadingDispatcher from "../Utils/AppLoading";
 import { BACKEND_DOMAIN } from "../../../misc/helpers/Backend";
-import { CONTACT_US_ERROR, CONTACT_US_SUCCESS, RESET_CONTACT_US } from "../../Actions/Service/ContactUs";
+import {
+  CONTACT_US_ERROR,
+  CONTACT_US_SUCCESS,
+  RESET_CONTACT_US,
+} from "../../Actions/Service/ContactUs";
+import Toast from "../Utils/Toast";
 
-let URL = `${BACKEND_DOMAIN}users/send-user-contact-us-email`;
+
+let URL = `${BACKEND_DOMAIN}api/user/candidate/send-user-contact-us-email`;
 
 let ERROR = false;
 
@@ -22,18 +27,22 @@ const ContactUsDispatcher = (data) => async (dispatch) => {
       }
       return res.json();
     })
-    .then( async (data) => {
+    .then(async (data) => {
       if (ERROR) {
         dispatch({
           type: CONTACT_US_ERROR,
           payload: { message: data.message },
         });
+        dispatch(Toast({ error: true, message: data.message }));
       } else {
-          dispatch({
+        dispatch(
+          {
             type: CONTACT_US_SUCCESS,
             payload: { message: data.message, user: data.data.user },
-        }, 3000);
-        
+          },
+          3000
+        );
+        dispatch(Toast({ error: false, message: data.message }));
       }
     })
     .catch((err) => {
@@ -42,6 +51,7 @@ const ContactUsDispatcher = (data) => async (dispatch) => {
         type: CONTACT_US_ERROR,
         payload: { message: err.message },
       });
+      dispatch(Toast({ error: true, message: err.message }));
     });
 };
 

@@ -12,7 +12,7 @@ const UpdateCompanyPlan = (data) => async (dispatch, getState) => {
   dispatch(AppLoadingDispatcher(true));
   let URL = `${BACKEND_DOMAIN}api/user/company/updatePlan`;
 
-  let params = requestParamsParser("PATCH", getState().GetCompanyFromSlug.token, data);
+  let params = requestParamsParser("PATCH", getState().GetCompanyFromSlug?.token, data);
   await fetch(URL, params)
     .then((res) => {
       dispatch(AppLoadingDispatcher(false));

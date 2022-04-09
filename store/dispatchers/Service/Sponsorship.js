@@ -3,8 +3,11 @@ import requestParamsParser from "../../../misc/helpers/requestParamsParser";
 import AppLoadingDispatcher from "../Utils/AppLoading";
 import { BACKEND_DOMAIN } from "../../../misc/helpers/Backend";
 import { ADD_SPONSORSHIP_ERROR, ADD_SPONSORSHIP_SUCCESS, RESET_ADD_SPONSORSHIP } from "../../Actions/Service/Sponsorship";
+import Toast from "../Utils/Toast";
 
-let URL = `${BACKEND_DOMAIN}users/add-new-sponsor`;
+
+
+let URL = `${BACKEND_DOMAIN}api/user/candidate/add-new-sponsor`;
 
 let ERROR = false;
 
@@ -28,11 +31,14 @@ const AddSponsorShipDispatcher = (data) => async (dispatch) => {
           type: ADD_SPONSORSHIP_ERROR,
           payload: { message: data.message },
         });
+        dispatch(Toast({ error:true, message:data.message }));
+
       } else {
           dispatch({
             type: ADD_SPONSORSHIP_SUCCESS,
             payload: { message: data.message, user: data.data.user },
         }, 3000);
+        dispatch(Toast({ error:false, message:data.message }));
         
       }
     })
@@ -42,6 +48,8 @@ const AddSponsorShipDispatcher = (data) => async (dispatch) => {
         type: ADD_SPONSORSHIP_ERROR,
         payload: { message: err.message },
       });
+      dispatch(Toast({ error:true, message:err.message }));
+
     });
 };
 
