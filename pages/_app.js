@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
       <Layout>
       <DefaultSeo
         title="owerri jobhunt"
-        description="jobs in owerri"
+        description="over 2000 jobs available for Grabs"
       />
         <Component {...pageProps} />
       </Layout>
