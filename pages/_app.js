@@ -3,12 +3,17 @@ import Layout from "../components/layout/Layout";
 import { Provider } from "react-redux";
 import store from "../store";
 import "./style.css";
+import { DefaultSeo } from 'next-seo'
 
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Layout>
+      <DefaultSeo
+        title="owerri jobhunt"
+        description="jobs in owerri"
+      />
         <Component {...pageProps} />
       </Layout>
     </Provider>

@@ -56,11 +56,7 @@ const Layout = (props) => {
           href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&display=swap"
           rel="stylesheet"
         />
-        <meta name="description" content="Find jobs in Owerri"/>
-        <meta name="description" content="Owerri jobhunt"/>
-        <meta name="description" content="Owerri"/>
-        <meta name="description" content="jobhunt"/>
-        <meta name="description" content="Owerrijobhunt"/>
+        <meta name="keywords" content="owerri, job, hunt, owerri jobhunt, find jobs in owerri"/>
       </Head>
       <NavBar />
       <ToastContainer
