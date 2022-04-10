@@ -57,7 +57,10 @@ const Layout = (props) => {
           rel="stylesheet"
         />
         <meta name="description" content="Find jobs in Owerri"/>
-        <meta property="og:title" content="Owerri joon hunt"/>
+        <meta name="description" content="Owerri jobhunt"/>
+        <meta name="description" content="Owerri"/>
+        <meta name="description" content="jobhunt"/>
+        <meta name="description" content="Owerrijobhunt"/>
       </Head>
       <NavBar />
       <ToastContainer
