@@ -23,15 +23,15 @@ const Sponsor = () => {
       }, []);
     return(
         <section className="">
-            <h1 className="text-center text-2xl font-semibold my-16">OUR SPONSORS</h1>
-            <div className="flex  justify-center my-8" data-aos="zoom-in">
+            <h1 className="text-center text-2xl font-semibold my-16">Meet our partners</h1>
+            <div className="flex flex-col  justify-center my-8 bg-slate-800" data-aos="zoom-in">
                 <Image
                     src={upskill}
                     width={300}
                 height={200}
                 alt="upskill-logo"
                 />
-                <div className="lg:pt-24 pt-12 pl-10 ">
+                <div className="lg:pt-24 pt-12 pl-4 md:pl-10 ">
                     <Image
                         src={harriet} 
                         width={300}
@@ -39,12 +39,14 @@ const Sponsor = () => {
                         alt="harriet-logo"
                     />
                 </div>
+                <div>
                 <Image
                     src={upskillTv}
                     width={400}
                 height={200}
                 alt="upskilltv-logog"
                 />
+                </div>
             </div>
         </section>
     )

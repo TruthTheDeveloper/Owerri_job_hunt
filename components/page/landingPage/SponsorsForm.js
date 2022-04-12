@@ -58,18 +58,20 @@ const SponsorsForm = () => {
   return (
     <section className="my-48">
       <h1 className="text-3xl text-center font-semibold mt-24">
-        Join Our Sponsors
+        Partner With Us
       </h1>
       <h1 className="text-2xl font-semibold text-center mt-14 mb-24">
         Lets add Owerri to the map, where buisnesses meet talents
       </h1>
       <form
         onSubmit={HandleJoinSponsors}
-        className="flex flex-col md:flex-row justify-center shadow-lg border-2 md:h-24 lg:mx-28 xl:mx-52 rounded-full "
+        className="flex flex-col md:flex-row justify-center shadow-lg border-2 h-96 md:h-24  lg:mx-28 xl:mx-52 rounded-full "
       >
+        {/* please read this comment
+        change this validation to buisness name instaed of website url */}
         <input
-          placeholder="website Url"
-          className="h-16 border-2 mx-2 mt-4 pl-2 placeholder:text-xl rounded-full outline-none"
+          placeholder="Buisness Name"
+          className="h-16 border-2  mt-4 pl-2 rounded-full outline-none mx-auto w-9/12 md:w-full md:mx-4"
           style={{ borderColor: "#3C8224" }}
           onChange={ e=> setFormData({...formData, website:e.target.value})}
           value={ formData.website }
@@ -78,8 +80,19 @@ const SponsorsForm = () => {
             websiteValidation.length > 0 && <ErrorText text={ websiteValidation } />
         }
         <input
-          placeholder="email"
-          className="h-16 border-2 mx-2 rounded-full  mt-4 pl-2 outline-none border-green-600"
+          placeholder="Buisness email"
+          className="h-16 border-2  rounded-full  mt-4 pl-2 outline-none border-green-600 w-10/12 mx-auto md:w-full md:mx-4"
+          style={{ borderColor: "#3C8224" }}
+          onChange={ e=> setFormData({...formData, email:e.target.value})}
+          value = { formData.email }
+        />
+        {
+            emailValidation.length > 0 && <ErrorText text={ emailValidation } />
+        }
+
+        <input
+          placeholder="(+country code)xxx phoneNumber"
+          className="h-16 border-2  rounded-full placeholder:text-xs  mt-4 pl-2 outline-none border-green-600 w-11/12 mx-auto md:w-full md:mx-4"
           style={{ borderColor: "#3C8224" }}
           onChange={ e=> setFormData({...formData, email:e.target.value})}
           value = { formData.email }
@@ -88,7 +101,7 @@ const SponsorsForm = () => {
             emailValidation.length > 0 && <ErrorText text={ emailValidation } />
         }
         <button
-        className={`bg-green-600 h-16 w-48 mx-auto xl:mx-12 text-white text-xl rounded-full  mt-4 pl-2  ${
+        className={`bg-green-600 h-16 w-48 xl:mx-12 text-white text-xl rounded-full  mt-4 pl-2 md:w-full md:mr-2 mx-auto  ${
             AppLoading && "btn-loading"
           }`}
           style={{ backgroundColor: "#3C8224" }}
