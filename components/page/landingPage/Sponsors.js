@@ -24,25 +24,27 @@ const Sponsor = () => {
     return(
         <section className="">
             <h1 className="text-center text-2xl font-semibold my-16">Meet our partners</h1>
-            <div className="flex flex-col  justify-center my-8 bg-slate-800" data-aos="zoom-in">
-                <Image
-                    src={upskill}
-                    width={300}
-                height={200}
-                alt="upskill-logo"
-                />
-                <div className="lg:pt-24 pt-12 pl-4 md:pl-10 ">
+            <div className="flex flex-col  justify-center my-8 sm:flex-row bg-slate-800"  style={{backgroundColor:"#001E00"}}>
+                <div className="mx-auto " data-aos="fade-left">
+                    <Image
+                        src={upskill}
+                        width={200}
+                    height={200}
+                    alt="upskill-logo"
+                    />
+                </div>
+                <div className="mx-auto lg:mt-10" data-aos="zoom-in">
                     <Image
                         src={harriet} 
-                        width={300}
+                        width={200}
                         height={200}
                         alt="harriet-logo"
                     />
                 </div>
-                <div>
+                <div className="mx-auto " data-aos="fade-right">
                 <Image
                     src={upskillTv}
-                    width={400}
+                    width={300}
                 height={200}
                 alt="upskilltv-logog"
                 />

@@ -121,7 +121,7 @@ const Talent = () => {
             <Image src={vitalis} height={250} width={250} alt="info"/>
             <h1 className="text-lg font-semibold mt-4">Marvis Chukwu</h1>
               <p className="text-center text-xl my-4">UIUX Designer</p>
-              <button onClick={() => profileHandler('Marvis Chukwu', 'UIUX Designer', AngelSpeech, vitalis)}  className="xl:w-48 xl:mx-auto mr-4 h-12 text-white rounded-lg my-6  text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
+              <button onClick={() => profileHandler('Marvis Chukwu', 'UIUX Designer', AngelSpeech, vitalis)}  className="xl:w-48 xl:mx-auto h-12 text-white rounded-lg my-6 text-lg" style={{backgroundColor:"#14A800"}}>View Profile</button>
           </div>
         </SwiperSlide>
       </Swiper>
