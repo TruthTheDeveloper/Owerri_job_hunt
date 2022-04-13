@@ -25,7 +25,7 @@ const Candidate = () => {
               className="text-center my-5 font-semibold"
               style={{ color: "#14A800" }}
             >
-              REGISTER AS A CANDIDATE
+              COMPLETE YOUR PROFILE
             </h1>
             <div className="flex flex-row">
                 <div className="py-4 w-full mr-2">
@@ -55,10 +55,11 @@ const Candidate = () => {
               <label>ProfilePic</label>
               <br />
               <input
-                className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
+                className="h-10 w-full outline-none  mt-4  pl-2 rounded-md"
                 onChange={(e) =>
                     setCandidateProfile({ ...candidateProfile, profilePic: e.target.value })
                 }
+                type="file"
               />
               {/* <p className="text-red-600">{nameValidation}</p> */}
             </div>
@@ -66,7 +67,8 @@ const Candidate = () => {
               <label>UploadResume</label>
               <br />
               <input
-                className="h-10 w-full outline-none border mt-4 border-green-500 pl-2 rounded-md"
+                className="h-10 w-full outline-none  mt-4  pl-2 rounded-md"
+                type="file"
                 onChange={(e) =>
                     setCandidateProfile({ ...candidateProfile, uploadResume: e.target.value })
                 }

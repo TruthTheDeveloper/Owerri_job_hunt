@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 //font awesome
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -48,7 +49,7 @@ const Footer = () => {
                 <div className="ml-6 md:ml-24 mt-16">
                     <p></p>
                     <div className="">
-                        <h1 className="text-xl font-semibold">Main Sponsor</h1>
+                        <h1 className="text-xl font-semibold">Proudly Powered by</h1>
                         <Image src={upskill} width={150} height={150} alt="jobhunt-logo"/>
                     </div>
                 </div>
@@ -57,13 +58,13 @@ const Footer = () => {
                 <div className="flex">
                 <h1 className="text-xl md:mx-8 mr-4 ml-2 font-semibold">Follow Us</h1>
                     <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faTwitter} className="w-10 h-10 mx-1 "  /></a>
-                    <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faFacebook} className="w-10 h-10 mx-1 "  /></a>
+                    <Link href="https://www.facebook.com/111700191454717/"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faFacebook} className="w-10 h-10 mx-1 "  /></Link>
                     <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faLinkedin} className="w-10 h-10 mx-1 "  /></a>
-                    <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faInstagram} className="w-10 h-10 mx-1 "  /></a>
+                    <Link href="https://instagram.com/upskill_network?utm_medium=copy_link"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faInstagram} className="w-10 h-10 mx-1 "  /></Link>
                 </div>
             </div>
             <hr className="border border-green-500" style={{color:"#14A800"}}/>
-            <h1  className="text-center text-lg my-8">Copyright 2022 all right reserved</h1>
+            <h1  className="text-center text-lg my-8">@Copyright 2022 all right reserved upskill network limited</h1>
         </footer>
     )
 }
