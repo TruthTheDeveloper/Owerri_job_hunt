@@ -1,10 +1,13 @@
-import Buisness from '../../components/Auth/Registration/Buisness'
+import Buisness from '../../components/Auth/Registration/Buisness';
+import Layout from '../../components/layout/Layout';
 
 const BuisnessRegisteration = () => {
   
 
   return (
-    <Buisness/>
+    <Layout>
+      <Buisness/>
+    </Layout>
   )
 };
 

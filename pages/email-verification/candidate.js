@@ -1,9 +1,13 @@
 import Candidate from "../../components/Auth/EmailVerification/User";
+import Layout from '../../components/layout/Layout';
+
 
 const EmailVerification = () => {
 
     return(
-        <Candidate/>
+        <Layout>
+            <Candidate/>
+        </Layout>
     )
 }
 

@@ -1,8 +1,11 @@
-import Candidate from "../../components/Profile/Candidate"
+import Candidate from "../../components/Profile/Candidate";
+import Layout from '../../components/layout/Layout';
 const CandidatePage = () => {
 
     return (
-        <Candidate/>
+        <Layout>
+            <Candidate/>
+        </Layout>
     )
 }
 

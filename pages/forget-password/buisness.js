@@ -1,8 +1,11 @@
-import Buisness from '../../components/Auth/ForgetPassword/Buisness'
+import Buisness from '../../components/Auth/ForgetPassword/Buisness';
+import Layout from '../../components/layout/Layout';
 const ForgetPassword = () => {
 
     return(
-        <Buisness/>
+        <Layout>
+            <Buisness/>
+        </Layout>
     )
 }
 

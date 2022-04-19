@@ -1,8 +1,11 @@
 import Plan from  '../../components/Plan';
+import Layout from '../../components/layout/Layout';
 
 const PlanPage = () => {
     return(
-        <Plan/>
+        <Layout>
+            <Plan/>
+        </Layout>
     )
 }
 

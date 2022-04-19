@@ -1,8 +1,11 @@
-import Candidate from '../../components/Auth/ForgetPassword/Candidate'
+import Candidate from '../../components/Auth/ForgetPassword/Candidate';
+import Layout from '../../components/layout/Layout';
 const ForgetPassword = () => {
 
     return(
-        <Candidate/>
+        <Layout>
+            <Candidate/>
+        </Layout>
     )
 }
 

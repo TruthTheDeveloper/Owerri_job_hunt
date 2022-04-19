@@ -1,7 +1,10 @@
 import {useState} from  'react';
 import Loader from '../../misc/Loader';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
+import {useRouter} from 'next/router';
 const Candidate = () => {
+
+    const router = useRouter()
 
     const { loading:AppLoading } = useSelector(state => state.AppLoadingReducer);
 
@@ -16,7 +19,14 @@ const Candidate = () => {
         linkedlnHandle:"",
         githubLink:"",
 
-    }) 
+    })
+
+
+    const submitHandler = (e) => {
+      e.preventDefault()
+
+      router.push('/dashboard/candidate')
+    }
 
     return(
         <section className="py-48 w-full flex">
@@ -132,7 +142,7 @@ const Candidate = () => {
             </div>
             <button
               className={`w-48 mx-auto h-12 text-white rounded-full my-6 text-lg ${AppLoading && 'btn-loading'}`}
-            //   onClick={submitHandler}
+              onClick={submitHandler}
               style={{ backgroundColor: "#14A800" }}
             >
                 { AppLoading ? <Loader color="#fff" />:"Submit"}

@@ -1,9 +1,12 @@
 import Buisness from "../../components/Auth/EmailVerification/User";
+import Layout from '../../components/layout/Layout';
 
 const EmailVerification = () => {
 
     return(
-        <Buisness/>
+       <Layout>
+            <Buisness/>
+       </Layout>
     )
 }
 

@@ -1,7 +1,10 @@
-import Buisness from '../../components/Auth/Login/Buisness'
+import Buisness from '../../components/Auth/Login/Buisness';
+import Layout from '../../components/layout/Layout';
 const BuisnessLogin = () => {
     return (
-        <Buisness/>
+        <Layout>
+            <Buisness/>
+        </Layout>
     )
 }
 
