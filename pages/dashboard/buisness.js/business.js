@@ -4,12 +4,12 @@ import {
   CHECK_BUSINESS_SLUG_EXISTS,
   DELETE_COMPANY_SLUG,
   GET_COMPANY_SLUG,
-} from "../../misc/helpers/authTokenManager";
+} from "../../../misc/helpers/authTokenManager";
 import { useRouter } from "next/router";
-import GetCompanyFromSlug from "../../store/dispatchers/Auth/Company/GetUserFromSlug";
-import BuisnessPlan from "../../components/Plan/BuisnessPlan";
-import Loader from "../../misc/Loader";
-import CompanyActive from "./companyActive";
+import GetCompanyFromSlug from "../../../store/dispatchers/Auth/Company/GetUserFromSlug";
+import BuisnessPlan from "../../../components/Plan/BuisnessPlan";
+import Loader from "../../../misc/Loader";
+import CompanyActive from "../companyActive";
 
 const Business = () => {
   const GetCompanyFromSlugState = useSelector(
