@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { faBook} from '@fortawesome/free-solid-svg-icons';
 import { faBriefcase} from '@fortawesome/free-solid-svg-icons';
+import { faPerson} from '@fortawesome/free-solid-svg-icons';
 import { faMoneyBill} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -13,7 +14,7 @@ const Candidate = () => {
 
         <div>
           <div className="my-4 py-2 flex text-center text-lg text-white mr-2 rounded-md shadow-xl cursor-pointer"  style={{backgroundColor:"#14A800"}} >
-            <FontAwesomeIcon icon={faBriefcase} className="ml-6 mt-1"/>
+            <FontAwesomeIcon icon={faPerson} className="ml-6 mt-1"/>
             <h1 className="ml-4">Dashboard</h1>
           </div>
           <div className="my-4 flex py-2  text-lg text-white mr-2 rounded-md shadow-xl cursor-pointer" style={{backgroundColor:"#14A800"}} >
