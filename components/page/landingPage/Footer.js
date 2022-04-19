@@ -56,6 +56,7 @@ const Footer = () => {
             </div>
             <div className="my-4">
                 <div className="flex">
+                    {/* -----DONT FORGET TO UPDATE OWERRI JOBHUNT WHEN YOU GET THIS DETAIL----> */}
                 <h1 className="text-xl md:mx-8 mr-4 ml-2 font-semibold">Follow Us</h1>
                     <a href="#"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faTwitter} className="w-10 h-10 mx-1 "  /></a>
                     <Link href="https://www.facebook.com/111700191454717/"><FontAwesomeIcon size='3x' style={{color:"#14A800"}}  icon={faFacebook} className="w-10 h-10 mx-1 "  /></Link>
