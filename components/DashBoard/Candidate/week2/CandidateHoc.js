@@ -5,7 +5,7 @@ import { faPerson} from '@fortawesome/free-solid-svg-icons';
 import { faMoneyBill} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Calender from './CandidateComponent/Calander';
+import Calender from '../CandidateComponent/Calander';
 
 const CandidateHoc = ({children}) => {
 
@@ -21,7 +21,7 @@ const CandidateHoc = ({children}) => {
               <h1 className="ml-4">DashBoard</h1>
             </div>
           </Link>
-          <Link href="/dashboard/candidate/course">
+          <Link href="/dashboard/candidate/week1/course">
             <div className="my-4 flex py-2  text-lg text-white mr-2 rounded-md shadow-xl cursor-pointer" style={{backgroundColor:"#14A800"}} >
               <FontAwesomeIcon icon={faBook} className="ml-6 mt-1"/>
               <h1 className="ml-4">My Courses</h1>
@@ -44,7 +44,7 @@ const CandidateHoc = ({children}) => {
 
         </section>
         <section className="bg-slate-100 h-screen col-span-4">
-            <div className="text-center text-2xl font-semibold my-4"><h1>Week 1</h1></div>
+            <div className="text-center text-2xl font-semibold my-4"><h1>Week 2</h1></div>
             <div className="grid grid-cols-2 justify-center">
                 {children}
                 

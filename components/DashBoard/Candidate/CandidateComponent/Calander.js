@@ -1,8 +1,14 @@
+import {useRouter} from 'next/router';
 
-const Calender = ({week}) => {
+const Calender = ({week, weekroute}) => {
+    const router = useRouter()
+
+    const routeHandler = () => {
+      router.push(`/dashboard/${weekroute}/course`)
+    }
 
     return (
-        <div className="h-72 w-80 shadow-xl my-8 mx-auto  border rounded-xl  cursor-pointer bg-green-600 text-white" >
+        <div className="h-72 w-80 shadow-xl my-8 mx-auto  border rounded-xl  cursor-pointer bg-green-600 text-white" onClick={routeHandler}>
               <h1 className="text-center text-xl my-3">{week}</h1>
               <div className="flex justify-center">
                 <div className="flex flex-col mx-auto font-semibold">

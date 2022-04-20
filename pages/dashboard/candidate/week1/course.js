@@ -1,4 +1,4 @@
-import CandidateCourse from '../../../components/DashBoard/Candidate/CandidateCourse';
+import CandidateCourse from '../../../../components/DashBoard/Candidate/CandidateCourse';
 
 const CoursePage = () => {
     
