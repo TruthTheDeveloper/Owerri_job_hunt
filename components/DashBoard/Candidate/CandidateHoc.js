@@ -4,10 +4,14 @@ import { faBriefcase} from '@fortawesome/free-solid-svg-icons';
 import { faPerson} from '@fortawesome/free-solid-svg-icons';
 import { faMoneyBill} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext } from 'react';
+import AuthContext from '../../../context/auth-context';
 
-import Calender from '../CandidateComponent/Calander';
+import Calender from './CandidateComponent/Calander';
 
-const CandidateHoc = ({children}) => {
+const CandidateHoc = ({children, week1}) => {
+  const {week, setWeek} = useContext(AuthContext)
+
 
     return (
         <section className="grid grid-cols-7 grid-rows-1 m-5 rounded-xl" >
@@ -44,10 +48,9 @@ const CandidateHoc = ({children}) => {
 
         </section>
         <section className="bg-slate-100 h-screen col-span-4">
-            <div className="text-center text-2xl font-semibold my-4"><h1>Week 2</h1></div>
+            <div className="text-center text-2xl font-semibold my-4"><h1>{week}</h1></div>
             <div className="grid grid-cols-2 justify-center">
                 {children}
-                
             </div>
             <div className="flex py-8 justify-center  text-white">
               <button className="py-2 px-4 rounded-md mx-2" style={{backgroundColor:"#14A800"}}>1</button>
@@ -62,8 +65,8 @@ const CandidateHoc = ({children}) => {
               <div className="bg-slate-700 h-14 w-14 rounded-full mr-4 ">
               </div>
             </div>
-            <Calender week={"week 1"}/>
-            <Calender week={"week 2"}/>
+            <Calender week={"week 1"} weekroute={"week1"}/>
+            <Calender week={"week 2"} weekroute={"week2"}/>
         </section>
       </section>
     )

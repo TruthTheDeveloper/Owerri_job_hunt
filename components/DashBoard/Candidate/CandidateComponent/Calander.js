@@ -1,10 +1,13 @@
 import {useRouter} from 'next/router';
+import { useContext } from 'react';
+import AuthContext from '../../../../context/auth-context';
 
 const Calender = ({week, weekroute}) => {
-    const router = useRouter()
+    
+  const {week, setWeek} = useContext(AuthContext)
 
     const routeHandler = () => {
-      router.push(`/dashboard/${weekroute}/course`)
+      setWeek(weekroute)
     }
 
     return (
