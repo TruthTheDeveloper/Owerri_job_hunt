@@ -2,7 +2,7 @@ import {useRouter} from 'next/router';
 import { useContext } from 'react';
 import AuthContext from '../../../../context/auth-context';
 
-const Calender = ({week, weekroute}) => {
+const Calender = ({weeks, weekroute}) => {
     
   const {week, setWeek} = useContext(AuthContext)
 

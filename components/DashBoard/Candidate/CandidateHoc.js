@@ -65,8 +65,8 @@ const CandidateHoc = ({children, week1}) => {
               <div className="bg-slate-700 h-14 w-14 rounded-full mr-4 ">
               </div>
             </div>
-            <Calender week={"week 1"} weekroute={"week1"}/>
-            <Calender week={"week 2"} weekroute={"week2"}/>
+            <Calender weeks={"week 1"} weekroute={"week1"}/>
+            <Calender weeks={"week 2"} weekroute={"week2"}/>
         </section>
       </section>
     )
