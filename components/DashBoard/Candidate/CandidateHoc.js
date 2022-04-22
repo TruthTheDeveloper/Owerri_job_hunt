@@ -4,18 +4,32 @@ import { faBriefcase} from '@fortawesome/free-solid-svg-icons';
 import { faPerson} from '@fortawesome/free-solid-svg-icons';
 import { faMoneyBill} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext } from 'react';
+import { faBars} from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from "@fortawesome/free-solid-svg-icons"
 import AuthContext from '../../../context/auth-context';
+import { useState, useContext } from 'react';
 
 import Calender from './CandidateComponent/Calander';
+import RightSideDrawer from './CandidateComponent/RightSideDrawer';
+import LeftSideDrawer from './CandidateComponent/LeftSideDrawer';
 
 const CandidateHoc = ({children, week1}) => {
   const {week, setWeek} = useContext(AuthContext)
+  const [openRightSideDrawer, setOpenRightSideDrawer] = useState(false)
+  const [openLeftSideDrawer, setOpenLeftSideDrawer] = useState(false)
+
+  const closeOpenRight = () => {
+    setOpenRightSideDrawer(false)
+  }
+
+  const closeOpenLeft = () => {
+    setOpenLeftSideDrawer(false)
+  }
 
 
     return (
-        <section className="grid grid-cols-7 grid-rows-1 m-5 rounded-xl" >
-        <section className=" h-screen pt-5 " >
+        <section className="grid grid-cols-1 grid-rows-1 lg:grid-cols-5 xl:grid-cols-7 m-5 rounded-xl bg-slate-" >
+        <section className=" h-screen pt-5 hidden lg:block bg-white" >
         <Link href="/"><h1 className="lg:text-2xl text-3xl font-bold ml-2 mb-8">Owerri <span className="font-bold " style={{color:"#14A800"}} >JobHunt</span></h1></Link>
 
         <div>
@@ -25,7 +39,7 @@ const CandidateHoc = ({children, week1}) => {
               <h1 className="ml-4">DashBoard</h1>
             </div>
           </Link>
-          <Link href="/dashboard/candidate/week1/course">
+          <Link href="/dashboard/candidate/course">
             <div className="my-4 flex py-2  text-lg text-white mr-2 rounded-md shadow-xl cursor-pointer" style={{backgroundColor:"#14A800"}} >
               <FontAwesomeIcon icon={faBook} className="ml-6 mt-1"/>
               <h1 className="ml-4">My Courses</h1>
@@ -47,9 +61,19 @@ const CandidateHoc = ({children, week1}) => {
         </div>
 
         </section>
-        <section className="bg-slate-100 h-screen col-span-4">
+        <>
+        
+        <section className="bg-slate-100  col-span-2 xl:col-span-4">
+          <nav className="flex justify-between lg:hidden">
+              <div className=" cursor-pointer" onClick={() => setOpenRightSideDrawer(true)}>
+                  <FontAwesomeIcon icon={faBars} className="text-green-600 h-6 w-6 ml-2 mt-2"/>
+              </div>
+              <div className=" cursor-pointer" onClick={() => setOpenLeftSideDrawer(true)}>
+                  <FontAwesomeIcon icon={faCalendar} className="text-green-600 w-6 ml-2 mt-2"/>
+              </div>
+          </nav>
             <div className="text-center text-2xl font-semibold my-4"><h1>{week}</h1></div>
-            <div className="grid grid-cols-2 justify-center">
+            <div className="grid xl:grid-cols-2 justify-center">
                 {children}
             </div>
             <div className="flex py-8 justify-center  text-white">
@@ -58,15 +82,18 @@ const CandidateHoc = ({children, week1}) => {
               <button className="py-2 px-4 rounded-md mx-2" style={{backgroundColor:"#14A800"}}>3</button>
               <button className="py-2 px-4 rounded-md mx-2" style={{backgroundColor:"#14A800"}}>4</button>
             </div>
+           <RightSideDrawer open={openRightSideDrawer} close={closeOpenRight}/>
+           <LeftSideDrawer open={openLeftSideDrawer} close={closeOpenLeft}/>
         </section>
-        <section className=" h-screen col-span-2 rounded-xl">
+        </>
+        <section className=" h-screen  rounded-xl hidden lg:block col-span-2 bg-white">
             <div className="flex justify-between bg-white">
               <h1 className="text-2xl ml-8">Henry Truth</h1>
               <div className="bg-slate-700 h-14 w-14 rounded-full mr-4 ">
               </div>
             </div>
-            <Calender weeks={"week 1"} weekroute={"week1"}/>
-            <Calender weeks={"week 2"} weekroute={"week2"}/>
+            <Calender weeks={"Week 1"} weekroute={"Week1"}/>
+            <Calender weeks={"Week 2"} weekroute={"Week2"}/>
         </section>
       </section>
     )
