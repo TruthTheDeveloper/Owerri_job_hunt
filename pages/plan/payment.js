@@ -12,7 +12,7 @@ const PricingComponent = ({ index }) => {
   const GetCompanyFromSlug = useSelector((state) => state.GetCompanyFromSlug);
   // PLANTYPE
   const config = () => ({
-    public_key: process.env.REACT_APP_FLUTTERWAVE_PUBLICKEY,
+    public_key: prREACT_APP_FLUTTERWAVE_PUBLICKEYocess.env.,
     tx_ref: Date.now(),
     amount: paymentType,
     currency: "NGN",

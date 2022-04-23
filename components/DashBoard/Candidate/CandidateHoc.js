@@ -13,7 +13,30 @@ import Calender from './CandidateComponent/Calander';
 import RightSideDrawer from './CandidateComponent/RightSideDrawer';
 import LeftSideDrawer from './CandidateComponent/LeftSideDrawer';
 
+import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+
 const CandidateHoc = ({children, week1}) => {
+
+  const config = {
+    public_key: process.env.REACT_APP_FLUTTERWAVE_PUBLICKEY,
+    tx_ref: Date.now(),
+    amount: 10000,
+    currency: 'NGN',
+    payment_options: 'card,mobilemoney,ussd',
+    customer: {
+      email: 'user@gmail.com',
+      phonenumber: '07064586146',
+      name: 'joel ugwumadu',
+    },
+    customizations: {
+      title: 'my Payment Title',
+      description: 'Payment for items in cart',
+      logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+    },
+  };
+
+  const handleFlutterPayment = useFlutterwave(config);
+
   const {week, setWeek} = useContext(AuthContext)
   const [openRightSideDrawer, setOpenRightSideDrawer] = useState(false)
   const [openLeftSideDrawer, setOpenLeftSideDrawer] = useState(false)
@@ -52,7 +75,15 @@ const CandidateHoc = ({children, week1}) => {
             </div>
           </Link>
           <Link href="#">
-            <div className="mt-56 flex py-8 text-center text-lg text-white mr-2 rounded-md shadow-xl cursor-pointer"  style={{backgroundColor:"#14A800"}}>
+            <div className="mt-56 flex py-8 text-center text-lg text-white mr-2 rounded-md shadow-xl cursor-pointer"  style={{backgroundColor:"#14A800"}} onClick={() => {
+          handleFlutterPayment({
+            callback: (response) => {
+               console.log(response);
+                closePaymentModal() // this will close the modal programmatically
+            },
+            onClose: () => {},
+          });
+        }}>
               <FontAwesomeIcon icon={faMoneyBill} className="ml-6 mt-1"/>
               <h1 className="pl-2">Make Payment</h1>
             </div>
