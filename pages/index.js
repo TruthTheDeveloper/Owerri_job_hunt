@@ -1,7 +1,10 @@
 import LandingPage from "../components/page/LandingPage";
+import Layout from "../components/layout/Layout";
 const Home = () => {
  return(
-   <LandingPage/>
+   <Layout>
+     <LandingPage/>
+   </Layout>
  )
 }
 

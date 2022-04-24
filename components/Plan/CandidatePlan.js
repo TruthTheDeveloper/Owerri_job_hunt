@@ -1,4 +1,4 @@
-const Payment = () => {
+const CandidatePlan = () => {
     return(
         <section>
             <h1>Payment</h1>
@@ -6,4 +6,4 @@ const Payment = () => {
     )
 }
 
-export default Payment;
+export default CandidatePlan;

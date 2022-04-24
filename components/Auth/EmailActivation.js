@@ -14,9 +14,9 @@ const EmailActivation = () => {
     (state) => state.EmailActivationReducer
   );
 
-  useEffect(async () => {
+  useEffect(() => {
     typeof router.query.token === "string" &&
-      (await dispatch(EmailValidationDispatcher(router.query.token)));
+      ( dispatch(EmailValidationDispatcher(router.query.token)));
   }, [router.query.token]);
 
   useEffect(() => {
