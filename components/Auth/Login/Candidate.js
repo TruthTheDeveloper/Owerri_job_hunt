@@ -40,7 +40,7 @@ const Candidate = () => {
       useEffect(() => {
         if (!LoginState.error && LoginState.message.length > 0) {
           dispatch(resetLoginStoreState());
-          router.push("/dashboard/candidate");
+          router.push("/dashboard/candidate/course");
         }
       }, [LoginState.error, LoginState.message]);
 

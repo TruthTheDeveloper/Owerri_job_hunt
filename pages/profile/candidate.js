@@ -1,7 +1,7 @@
 import Candidate from "../../components/Profile/Candidate";
 import Layout from '../../components/layout/Layout';
-const CandidatePage = () => {
 
+const CandidatePage = () => {
     return (
         <Layout>
             <Candidate/>

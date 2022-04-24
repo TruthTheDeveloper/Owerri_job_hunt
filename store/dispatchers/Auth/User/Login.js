@@ -35,6 +35,7 @@ const LoginUserDispatcher = (data) => async (dispatch) => {
         });
         dispatch(Toast({ error: true, message: data.message }));
       } else {
+        
         await SAVE_USER_SLUG(data.data.user.slug);
         setTimeout(() => {
           dispatch({

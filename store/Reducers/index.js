@@ -12,6 +12,7 @@ import AddTopicResourceReducer from "./Topics/AddTopicResource";
 import UpdateCompanyPlan from "./Auth/Company/UpdateCompanyPlan";
 import UpdateUserPlan from "./Auth/User/UserCompletePayment";
 import ResendUserAccountActivation from "./Auth/User/ResendUserAccountActivationEmail";
+import UpdateUserProfileReducer from "./Profile/User/Update";
 import SponsorshipReducer from "./Service/Sponsorship";
 import ContactUsReducer from "./Service/ContactUs";
 import AppToast from "./Utils/Toast";
@@ -25,6 +26,7 @@ const reducers = combineReducers({
     EmailActivationReducer,
     GetTopicsReducer,
     GetUserFromSlug,
+    UpdateUserProfileReducer,
     AddTopicResourceReducer,
     RegisterCompanyReducer,
     LoginCompanyReducer,

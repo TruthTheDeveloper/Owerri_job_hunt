@@ -3,7 +3,6 @@
 let USER_SLUG_KEY ="USER_SLUG_KEY";
 let COMPANY_SLUG_KEY ="COMPANY_SLUG_KEY";
 export const SAVE_USER_SLUG = slug =>{
-    console.log(slug);
     localStorage.setItem(USER_SLUG_KEY, slug);
 }
 
@@ -15,14 +14,7 @@ export const DELETE_USER_SLUG = async ()=>{
     await localStorage.removeItem(USER_SLUG_KEY);
 }
 
-export const CHECK_USER_SLUG_EXISTS = async ()=>{
-    if(typeof(await localStorage[USER_SLUG_KEY]) === "undefined") {return false;}
-    if(await localStorage[USER_SLUG_KEY].length < 1){
-        return false;
-    }
-    return true;
-}
-
+export const CHECK_USER_SLUG_EXISTS =  () =>  localStorage.hasOwnProperty(USER_SLUG_KEY)
 
 export const SAVE_COMPANY_SLUG = slug =>{
     console.log(slug);
