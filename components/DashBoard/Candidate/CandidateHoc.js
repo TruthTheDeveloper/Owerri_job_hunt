@@ -43,14 +43,7 @@ const CandidateHoc = ({children, week1}) => {
   const [openLeftSideDrawer, setOpenLeftSideDrawer] = useState(false)
 
 
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage, setPostsPerPage] = useState(4)
-  const [posts, setPosts] = useState([1,2,3,4,5,6,7,8,9,10])
-
-
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+  
 
   const closeOpenRight = () => {
     setOpenRightSideDrawer(false)
@@ -60,7 +53,7 @@ const CandidateHoc = ({children, week1}) => {
     setOpenLeftSideDrawer(false)
   }
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  
 
 
     return (
@@ -117,12 +110,8 @@ const CandidateHoc = ({children, week1}) => {
               </div>
           </nav>
             <div className="text-center text-2xl font-semibold my-4"><h1>{week}</h1></div>
-            <div className="grid xl:grid-cols-2 justify-center">
-                {children}
-            </div>
-            <div className="flex py-8 justify-center  text-white">
-              <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
-            </div>
+            
+            {children}
            <RightSideDrawer open={openRightSideDrawer} close={closeOpenRight}/>
            <LeftSideDrawer open={openLeftSideDrawer} close={closeOpenLeft}/>
         </section>

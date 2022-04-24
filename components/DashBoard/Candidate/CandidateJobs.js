@@ -17,7 +17,8 @@ const CandidateJobs = () => {
 
       <CandidateHoc>
           <h1 className="text-xl font-semibold my-3 text-center basis-1">My Jobs </h1>
-          <h1 className="basis-0"></h1>
+          <div className="grid xl:grid-cols-2 justify-center">
+          {/* <h1 className="basis-0"></h1> */}
           <Jobs image={sponsor1} jobTitle={'Talent Manager'} jobDescription={'Counsel talent concerning professional matters'} location={'Apapa, lagos, Nigeria (Remote)'}/>
           <Jobs image={sponsor2} jobTitle={'Digital Marketer'} jobDescription={' boost brand awareness while driving traffic to acquire new customers'} location={'aldinma, Owerri, Nigeria (Remote)'}/>
           <Jobs image={sponsor5} jobTitle={'Content Writer'} jobDescription={'create print and digital content for companies that provides information or showcases the products or services they offer'} location={'aldinma, Owerri, Nigeria (Remote)'}/>
@@ -28,6 +29,7 @@ const CandidateJobs = () => {
           <Jobs image={sponsor10} jobTitle={'Digital Marketer'} jobDescription={'boost brand awareness while driving traffic to acquire new customers'} location={'aldinma, Owerri, Nigeria (Remote)'}/>
           {/* <Jobs image={sponsor1}/>
           <Jobs image={sponsor1}/> */}
+          </div>
       </CandidateHoc>
             
     )
