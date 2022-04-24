@@ -11,8 +11,8 @@ const RightSideDrawer = ({open, close}) => {
 
 
     return(
-       <>{open ? <section className="fixed top-0 left-0  w-full z-40 overflow-y-scroll lg:hidden" style={{backgroundColor:'rgba(0, 0, 0, 0.774)'}}>
-       <div className="bg-white  w-56 overflow-y-scroll">
+       <>{open ? <section className="fixed top-0 left-0  w-full z-40 overflow-y-scroll lg:hidden " style={{backgroundColor:'rgba(0, 0, 0, 0.774)'}}>
+       <div className="bg-white  w-56 overflow-y-scroll rsd_anime">
        <section className=" h-screen pt-5  lg:block" >
        
            <FontAwesomeIcon icon={faClose} className="ml-48 mb-8  text-green-600 text-2xl mx-3" onClick={close}/>

@@ -12,6 +12,7 @@ import { useState, useContext } from 'react';
 import Calender from './CandidateComponent/Calander';
 import RightSideDrawer from './CandidateComponent/RightSideDrawer';
 import LeftSideDrawer from './CandidateComponent/LeftSideDrawer';
+import Pagination from './CandidateComponent/Pagination';
 
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
@@ -41,6 +42,16 @@ const CandidateHoc = ({children, week1}) => {
   const [openRightSideDrawer, setOpenRightSideDrawer] = useState(false)
   const [openLeftSideDrawer, setOpenLeftSideDrawer] = useState(false)
 
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage, setPostsPerPage] = useState(4)
+  const [posts, setPosts] = useState([1,2,3,4,5,6,7,8,9,10])
+
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+
   const closeOpenRight = () => {
     setOpenRightSideDrawer(false)
   }
@@ -48,6 +59,8 @@ const CandidateHoc = ({children, week1}) => {
   const closeOpenLeft = () => {
     setOpenLeftSideDrawer(false)
   }
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
 
     return (
@@ -108,10 +121,7 @@ const CandidateHoc = ({children, week1}) => {
                 {children}
             </div>
             <div className="flex py-8 justify-center  text-white">
-              <button className="py-2 px-4 rounded-md mx-2" style={{backgroundColor:"#14A800"}}>1</button>
-              <button className="py-2 px-4 rounded-md mx-2" style={{backgroundColor:"#14A800"}}>2</button>
-              <button className="py-2 px-4 rounded-md mx-2" style={{backgroundColor:"#14A800"}}>3</button>
-              <button className="py-2 px-4 rounded-md mx-2" style={{backgroundColor:"#14A800"}}>4</button>
+              <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
             </div>
            <RightSideDrawer open={openRightSideDrawer} close={closeOpenRight}/>
            <LeftSideDrawer open={openLeftSideDrawer} close={closeOpenLeft}/>
