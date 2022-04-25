@@ -100,7 +100,7 @@ const CandidateHoc = ({children, week1}) => {
         </section>
         <>
         
-        <section className="bg-slate-100  col-span-2 xl:col-span-4">
+        <section className="bg-slate-100  col-span-2 xl:col-span-4 ">
           <nav className="flex justify-between lg:hidden">
               <div className=" cursor-pointer" onClick={() => setOpenRightSideDrawer(true)}>
                   <FontAwesomeIcon icon={faBars} className="text-green-600 h-6 w-6 ml-2 mt-2"/>

@@ -17,7 +17,7 @@ const CandidateCourse = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
-  console.log(Posts)
+  // console.log(Posts)
 
     return(
 

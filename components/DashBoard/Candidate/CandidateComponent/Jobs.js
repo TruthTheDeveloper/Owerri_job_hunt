@@ -23,17 +23,26 @@ const Jobs = ({image, jobTitle, jobDescription, location}) => {
       const handleFlutterPayment = useFlutterwave(config);
 
     return (
-        <div className="flex bg-white m-4 shadow-xl cursor-pointer">
-            <div>
+        <div className="flex bg-white m-4 shadow-xl cursor-pointer" onClick={() => {
+          console.log('clicked')
+handleFlutterPayment({
+  callback: (response) => {
+     console.log(response);
+      closePaymentModal() // this will close the modal programmatically
+  },
+  onClose: () => {},
+});
+}}>
+            <div className=" p-3 my-auto" >
                 <Image
                 src={image}
-                className="rounded-full"
+                className="rounded-full w-full"
                 width={100}
                 height={100}
                 alt="logo"
                 />
             </div>
-            <div className="mt-4">
+            <div className="mt-4 py-6">
             <h2 className="text-lg font-semibold">{jobTitle}</h2>
             <h3>{jobDescription}</h3>
             <p>{location}</p>
